@@ -1,0 +1,111 @@
+with significant research efforts being directed to the development of neurocomputers based on the functionalities of the brain , a seismic shift is expected in the domain of computing based on the traditional von - neumann model .
+the @xmath0 @xcite , @xmath1 @xcite and the ibm @xmath2 @xcite are instances of recent flagship neuromorphic projects that aim to develop brain - inspired computing platforms suitable for recognition ( image , video , speech ) , classification and mining problems . while boolean computation is based on the sequential fetch , decode and execute cycles , such neuromorphic computing architectures are massively parallel and event - driven and are potentially appealing for pattern recognition tasks and cortical brain simulations
+to that end , researchers have proposed various nanoelectronic devices where the underlying device physics offer a mapping to the neuronal and synaptic operations performed in the brain . the main motivation behind the usage of such non - von neumann post - cmos technologies as neural and synaptic devices stems from the fact that the significant mismatch between the cmos transistors and the underlying neuroscience mechanisms result in significant area and energy overhead for a corresponding hardware implementation .
+a very popular instance is the simulation of a cat s brain on ibm s blue gene supercomputer where the power consumption was reported to be of the order of a few @xmath3 @xcite .
+while the power required to simulate the human brain will rise significantly as we proceed along the hierarchy in the animal kingdom , actual power consumption in the mammalian brain is just a few tens of watts .    in a neuromorphic computing platform
+, synapses form the pathways between neurons and their strength modulate the magnitude of the signal transmitted between the neurons .
+the exact mechanisms that underlie the `` learning '' or `` plasticity '' of such synaptic connections are still under debate .
+meanwhile , researchers have attempted to mimic several plasticity measurements observed in biological synapses in nanoelectronic devices like phase change memories @xcite , @xmath4 memristors @xcite and spintronic devices @xcite , etc .
+however , majority of the research have focused on non - volatile plasticity changes of the synapse in response to the spiking patterns of the neurons it connects corresponding to long - term plasticity @xcite and the volatility of human memory has been largely ignored . as a matter of fact , neuroscience studies performed in @xcite have demonstrated that synapses exhibit an inherent learning ability where they undergo volatile plasticity changes and ultimately undergo long - term plasticity conditionally based on the frequency of the incoming action potentials .
+such volatile or meta - stable synaptic plasticity mechanisms can lead to neuromorphic architectures where the synaptic memory can adapt itself to a changing environment since sections of the memory that have been not receiving frequent stimulus can be now erased and utilized to memorize more frequent information .
+hence , it is necessary to include such volatile memory transition functionalities in a neuromorphic chip in order to leverage from the computational power that such meta - stable synaptic plasticity mechanisms has to offer .
+[ drawing1 ] ( a ) demonstrates the biological process involved in such volatile synaptic plasticity changes . during the transmission of each action potential from the pre - neuron to the post - neuron through the synapse , an influx of ionic species like
+@xmath5 and @xmath6 causes the release of neurotransmitters from the pre- to the post - neuron .
+this results in temporary strengthening of the synaptic strength .
+however , in absence of the action potential , the ionic species concentration settles down to its equilibrium value and the synapse strength diminishes . this phenomenon is termed as short - term plasticity ( stp ) @xcite . however ,
+if the action potentials occur frequently , the concentration of the ions do not get enough time to settle down to the equilibrium concentration and this buildup of concentration eventually results in long - term strengthening of the synaptic junction .
+this phenomenon is termed as long - term potentiation ( ltp ) . while stp is a meta - stable state and lasts for a very small time duration
+, ltp is a stable synaptic state which can last for hours , days or even years @xcite .
+a similar discussion is valid for the case where there is a long - term reduction in synaptic strength with frequent stimulus and then the phenomenon is referred to as long - term depression ( ltd ) .
+such stp and ltp mechanisms have been often correlated to the short - term memory ( stm ) and long - term memory ( ltm ) models proposed by atkinson and shiffrin @xcite ( fig .
+[ drawing1](b ) ) .
+this psychological model partitions the human memory into an stm and an ltm . on the arrival of an input stimulus , information is first stored in the stm . however , upon frequent rehearsal , information gets transferred to the ltm . while the `` forgetting '' phenomena occurs at a fast rate in the stm , information can be stored for a much longer duration in the ltm .    in order to mimic such volatile synaptic plasticity mechanisms , a nanoelectronic device is required that is able to undergo meta - stable resistance transitions depending on the frequency of the input and also transition to a long - term stable resistance state on frequent stimulations .
+hence a competition between synaptic memory reinforcement or strengthening and memory loss is a crucial requirement for such nanoelectronic synapses . in the next section
+, we will describe the mapping of the magnetization dynamics of a nanomagnet to such volatile synaptic plasticity mechanisms observed in the brain .
+let us first describe the device structure and principle of operation of an mtj @xcite as shown in fig .
+[ drawing2](a ) .
+the device consists of two ferromagnetic layers separated by a tunneling oxide barrier ( tb ) .
+the magnetization of one of the layers is magnetically `` pinned '' and hence it is termed as the `` pinned '' layer ( pl ) .
+the magnetization of the other layer , denoted as the `` free layer '' ( fl ) , can be manipulated by an incoming spin current @xmath7 .
+the mtj structure exhibits two extreme stable conductive states  the low conductive `` anti - parallel '' orientation ( ap ) , where pl and fl magnetizations are oppositely directed and the high conductive `` parallel '' orientation ( p ) , where the magnetization of the two layers are in the same direction .
+let us consider that the initial state of the mtj synapse is in the low conductive ap state .
+considering the input stimulus ( current ) to flow from terminal t2 to terminal t1 , electrons will flow from terminal t1 to t2 and get spin - polarized by the pl of the mtj .
+subsequently , these spin - polarized electrons will try to orient the fl of the mtj `` parallel '' to the pl .
+it is worth noting here that the spin - polarization of incoming electrons in the mtj is analogous to the release of neurotransmitters in a biological synapse .
+the stp and ltp mechanisms exhibited in the mtj due to the spin - polarization of the incoming electrons can be explained by the energy profile of the fl of the mtj .
+let the angle between the fl magnetization , @xmath8 , and the pl magnetization , @xmath9 , be denoted by @xmath10 .
+the fl energy as a function of @xmath10 has been shown in fig .
+[ drawing2](a ) where the two energy minima points ( @xmath11 and @xmath12 ) are separated by the energy barrier , @xmath13 . during the transition from the ap state to the p state , the fl has to transition from @xmath12 to @xmath11 . upon the receipt of an input stimulus , the fl magnetization proceeds `` uphill '' along the energy profile ( from initial point 1 to point 2 in fig .
+[ drawing2](a ) ) .
+however , since point 2 is a meta - stable state , it starts going `` downhill '' to point 1 , once the stimulus is removed .
+if the input stimulus is not frequent enough , the fl will try to stabilize back to the ap state after each stimulus .
+however , if the stimulus is frequent , the fl will not get sufficient time to reach point 1 and ultimately will be able to overcome the energy barrier ( point 3 in fig .
+[ drawing2](a ) ) .
+it is worth noting here , that on crossing the energy barrier at @xmath14 , it becomes progressively difficult for the mtj to exhibit stp and switch back to the initial ap state .
+this is in agreement with the psychological model of human memory where it becomes progressively difficult for the memory to `` forget '' information during transition from stm to ltm .
+hence , once it has crossed the energy barrier , it starts transitioning from the stp to the ltp state ( point 4 in fig .
+[ drawing2](a ) ) .
+the stability of the mtj in the ltp state is dictated by the magnitude of the energy barrier .
+the lifetime of the ltp state is exponentially related to the energy barrier @xcite .
+for instance , for an energy barrier of @xmath15 used in this work , the ltp lifetime is @xmath16 hours while the lifetime can be extended to around @xmath17 years by engineering a barrier height of @xmath18 .
+the lifetime can be varied by varying the energy barrier , or equivalently , volume of the mtj .
+the stp - ltp behavior of the mtj can be also explained from the magnetization dynamics of the fl described by landau - lifshitz - gilbert ( llg ) equation with additional term to account for the spin momentum torque according to slonczewski @xcite , @xmath19 where , @xmath20 is the unit vector of fl magnetization , @xmath21 is the gyromagnetic ratio for electron , @xmath22 is gilberts damping ratio , @xmath23 is the effective magnetic field including the shape anisotropy field for elliptic disks calculated using @xcite , @xmath24 is the number of spins in free layer of volume @xmath25 ( @xmath26 is saturation magnetization and @xmath27 is bohr magneton ) , and @xmath28 is the spin current generated by the input stimulus @xmath29 ( @xmath30 is the spin - polarization efficiency of the pl ) . thermal noise is included by an additional thermal field @xcite , @xmath31 , where @xmath32 is a gaussian distribution with zero mean and unit standard deviation , @xmath33 is boltzmann constant , @xmath34 is the temperature and @xmath35 is the simulation time step .
+equation  [ llg ] can be reformulated by simple algebraic manipulations as , @xmath36 hence , in the presence of an input stimulus the magnetization of the fl starts changing due to integration of the input . however , in the absence of the input , it starts leaking back due to the first two terms in the rhs of the above equation .
+it is worth noting here that , like traditional semiconductor memories , magnitude and duration of the input stimulus will definitely have an impact on the stp - ltp transition of the synapse .
+however , frequency of the input is a critical factor in this scenario . even though the total flux through the device is same ,
+the synapse will conditionally change its state if the frequency of the input is high .
+we verified that this functionality is exhibited in mtjs by performing llg simulations ( including thermal noise ) .
+the conductance of the mtj as a function of @xmath10 can be described by , @xmath37 where , @xmath38 ( @xmath39 ) is the mtj conductance in the p ( ap ) orientation respectively . as shown in fig .
+[ drawing2](b ) , the mtj conductance undergoes meta - stable transitions ( stp ) and is not able to undergo ltp when the time interval of the input pulses is large ( @xmath40 ) .
+however , on frequent stimulations with time interval as @xmath41 , the device undergoes ltp transition incrementally .
+[ drawing2](b ) and ( c ) illustrates the competition between memory reinforcement and memory decay in an mtj structure that is crucial to implement stp and ltp in the synapse .
+we demonstrate simulation results to verify the stp and ltp mechanisms in an mtj synapse depending on the time interval between stimulations .
+the device simulation parameters were obtained from experimental measurements @xcite and have been shown in table i.    [ table ]    table i. device simulation parameters    [ cols="^,^ " , ]      +                the mtj was subjected to 10 stimulations , each stimulation being a current pulse of magnitude @xmath42 and @xmath43 in duration . as shown in fig .
+[ drawing3 ] , the probability of ltp transition and average device conductance at the end of each stimulation increases with decrease in the time interval between the stimulations .
+the dependence on stimulation time interval can be further characterized by measurements corresponding to paired - pulse facilitation ( ppf : synaptic plasticity increase when a second stimulus follows a previous similar stimulus ) and post - tetanic potentiation ( ptp : progressive synaptic plasticity increment when a large number of such stimuli are received successively ) @xcite .
+[ drawing4 ] depicts such ppf ( after 2nd stimulus ) and ptp ( after 10th stimulus ) measurements for the mtj synapse with variation in the stimulation interval .
+the measurements closely resemble measurements performed in frog neuromuscular junctions @xcite where ppf measurements revealed that there was a small synaptic conductivity increase when the stimulation rate was frequent enough while ptp measurements indicated ltp transition on frequent stimulations with a fast decay in synaptic conductivity on decrement in the stimulation rate .
+hence , stimulation rate indeed plays a critical role in the mtj synapse to determine the probability of ltp transition .
+the psychological model of stm and ltm utilizing such mtj synapses was further explored in a @xmath44 memory array .
+the array was stimulated by a binary image of the purdue university logo where a set of 5 pulses ( each of magnitude @xmath45 and @xmath46 in duration ) was applied for each on pixel .
+the snapshots of the conductance values of the memory array after each stimulus have been shown for two different stimulation intervals of @xmath47 and @xmath48 respectively .
+while the memory array attempts to remember the displayed image right after stimulation , it fails to transition to ltm for the case @xmath49 and the information is eventually lost @xmath50 after stimulation .
+however , information gets transferred to ltm progressively for @xmath51 .
+it is worth noting here , that the same amount of flux is transmitted through the mtj in both cases .
+the simulation not only provides a visual depiction of the temporal evolution of a large array of mtj conductances as a function of stimulus but also provides inspiration for the realization of adaptive neuromorphic systems exploiting the concepts of stm and ltm .
+readers interested in the practical implementation of such arrays of spintronic devices are referred to ref .
+the contributions of this work over state - of - the - art approaches may be summarized as follows .
+this is the first theoretical demonstration of stp and ltp mechanisms in an mtj synapse .
+we demonstrated the mapping of neurotransmitter release in a biological synapse to the spin polarization of electrons in an mtj and performed extensive simulations to illustrate the impact of stimulus frequency on the ltp probability in such an mtj structure .
+there have been recent proposals of other emerging devices that can exhibit such stp - ltp mechanisms like @xmath52 synapses @xcite and @xmath53 memristors @xcite .
+however , it is worth noting here , that input stimulus magnitudes are usually in the range of volts ( 1.3v in @xcite and 80mv in @xcite ) and stimulus durations are of the order of a few msecs ( 1ms in @xcite and 0.5s in @xcite ) .
+in contrast , similar mechanisms can be exhibited in mtj synapses at much lower energy consumption ( by stimulus magnitudes of a few hundred @xmath54 and duration of a few @xmath55 ) .
+we believe that this work will stimulate proof - of - concept experiments to realize such mtj synapses that can potentially pave the way for future ultra - low power intelligent neuromorphic systems capable of adaptive learning .
+the work was supported in part by , center for spintronic materials , interfaces , and novel architectures ( c - spin ) , a marco and darpa sponsored starnet center , by the semiconductor research corporation , the national science foundation , intel corporation and by the national security science and engineering faculty fellowship .
+j.  schemmel , j.  fieres , and k.  meier , in _ neural networks , 2008 .
+ijcnn 2008.(ieee world congress on computational intelligence ) .
+ieee international joint conference on_.1em plus 0.5em minus 0.4emieee , 2008 , pp .
+431438 .
+b.  l. jackson , b.  rajendran , g.  s. corrado , m.  breitwisch , g.  w. burr , r.  cheek , k.  gopalakrishnan , s.  raoux , c.  t. rettner , a.  padilla _
+et  al . _ , `` nanoscale electronic synapses using phase change devices , '' _ acm journal on emerging technologies in computing systems ( jetc ) _ , vol .  9 , no .  2 , p.  12
+, 2013 .
+m.  n. baibich , j.  m. broto , a.  fert , f.  n. van  dau , f.  petroff , p.  etienne , g.  creuzet , a.  friederich , and j.  chazelas , `` giant magnetoresistance of ( 001 ) fe/(001 ) cr magnetic superlattices , '' _ physical review letters _ ,
+61 , no .
+21 , p. 2472
+, 1988 .
+g.  binasch , p.  grnberg , f.  saurenbach , and w.  zinn , `` enhanced magnetoresistance in layered magnetic structures with antiferromagnetic interlayer exchange , '' _ physical review b _ , vol .
+39 , no .  7 , p. 4828
+, 1989 .
+w.  scholz , t.  schrefl , and j.  fidler , `` micromagnetic simulation of thermally activated switching in fine particles , '' _ journal of magnetism and magnetic materials _ , vol .
+233 , no .  3 , pp .
+296304 , 2001 .
+pai , l.  liu , y.  li , h.  tseng , d.  ralph , and r.  buhrman , `` spin transfer torque devices utilizing the giant spin hall effect of tungsten , '' _ applied physics letters _ , vol .
+101 , no .  12 , p. 122404
+, 2012 .
+h.  noguchi , k.  ikegami , k.  kushida , k.  abe , s.  itai , s.  takaya , n.  shimomura , j.  ito , a.  kawasumi , h.  hara _
+et  al . _ , in _ solid - state circuits conference-(isscc ) , 2015 ieee international_.1em plus 0.5em minus 0.4emieee , 2015 , pp .
+t.  ohno , t.  hasegawa , t.  tsuruoka , k.  terabe , j.  k. gimzewski , and m.  aono , `` short - term plasticity and long - term potentiation mimicked in single inorganic synapses , '' _ nature materials _ , vol .
+10 , no .  8 , pp . 591595 , 2011 .
+r.  yang , k.  terabe , y.  yao , t.  tsuruoka , t.  hasegawa , j.  k. gimzewski , and m.  aono , `` synaptic plasticity and memory functions achieved in a wo3- x - based nanoionics device by using the principle of atomic switch operation , '' _ nanotechnology _ , vol .
+24 , no .
+38 , p. 384003

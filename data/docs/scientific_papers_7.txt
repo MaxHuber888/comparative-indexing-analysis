@@ -1,0 +1,73 @@
+the simulations we discuss here allowed us to obtain spectra of the shg response .
+we employed comsol multiphysics software ( www.comsol.com ) in order to perform simulations of the linear optical response as described in ref .
+@xcite . a unit cell containing a single sic pillar attached to the sic substrate
+was constructed , with floquet boundary conditions along the @xmath30-axis and periodic boundary conditions along the @xmath31-axis , perpendicular to the plane of incidence .
+a _ p_-polarized plane wave at frequency @xmath32 was launched towards the sic structure at an incident angle of 25@xmath33 .
+originating from the _ p_-polarised light source , the electric field @xmath34 inside the sic pillar and substrate was recorded .
+then , this electric field was translated into the nonlinear polarization @xmath16 , according to eq .
+( 1 ) in the main manuscript . there , the following non - zero components of the nonlinear susceptibility were accounted for : @xmath14 , @xmath17 and @xmath18 .    as a next step , @xmath16 in the pillar and the substrate
+was regarded as the source of scattered electric field @xmath35 inside the unit cell .
+the shg output was then obtained by integrating the power flow through a _
+xy_-plane set above the substrate .
+sweeping the fundamental frequency and taking the dispersion of both linear and nonlinear sic susceptibilities from refs.@xcite , we calculated several shg spectra for samples with various periodicity of the pillars .
+we note that in these calculations , the input power density at fundamental frequency was kept constant , and the shg output power was normalized to the area of the _ xy_-plane @xmath36 . the results of the simulations presented in fig
+.  [ analysis ] in the main manuscript demonstrate a single pronounced peak corresponding to the excitation of the sphp monopole mode .
+barnes ,  w.  l. ; dereux ,  a. ; ebbesen ,  t.  w. surface plasmon subwavelength optics . _
+nature ( london ) _ * 2003 * , _ 424 _ , 824830 maier ,  s.  a. _ plasmonics : fundamentals and applications _ ; springer : new york , 2007 schuller ,  j.  a. ; barnard ,  e.  s. ; cai ,  w. ; jun ,  y.  c. ; white ,  j.  s. ; brongersma ,  m.  l. plasmonics for extreme light concentration and manipulation .
+mater . _ * 2010 * , _ 9 _ , 193204 boriskina ,  s.  v. ; ghasemi ,  h. ; chen ,  g. plasmonic materials for energy : from physics to applications .
+_ mater . today _ * 2013 * , _ 16 _ , 375386 brongersma ,  m.  l. ; halas ,  n.  j. ; nordlander ,  p. plasmon - induced hot carrier science and technology . _
+* 2015 * , _ 10 _ , 2534 kauranen ,  m. ; zayats ,  a.  v. nonlinear plasmonics .
+photon . _ * 2012 * , _ 6 _ , 737748 hentschel ,  m. ; utikal ,  t. ; metzger ,  b. ; giessen ,  h. ; lippitz ,  m. in _ progress in nonlinear nano - optics _ ; sabake ,  s. , lienau ,  c. , grunwald ,  r. , eds . ; springer international publishing : switzerland , 2015 ; chapter 9 , pp 153181 butet ,  j. ; brevet ,  p .- f .
+; martin ,  o. j.  f. optical second harmonic generation in plasmonic nanostructures : from fundamental principles to advanced applications .
+_ acs nano _ * 2015 * , _ 9 _ , 1054510562 vahala ,  k.  j. optical microcavities .
+_ nature ( london ) _ * 2003 * , _ 424 _ , 839846 barnes ,  w.  l. surface plasmon - polariton length scales : a route to sub - wavelength optics .
+_ j. opt . a : pure appl
+_ * 2006 * , _ 8 _ , s87s93 greffet ,  j .- j . ;
+carminati ,  r. ; joulain ,  k. ; mulet ,  j .- p . ;
+mainguy ,  s. ; chen ,  y. coherent emission of light by thermal sources .
+_ nature ( london ) _ * 2002 * , _ 416 _ , 6164 hillenbrand ,  r. ; taubner ,  t. ; keilmann ,  f. phonon - enhanced light - matter interaction at the nanometre scale .
+_ nature ( london ) _ * 2002 * , _ 418 _ , 159162 ,  b. ; korobkin ,  d. ; fietz ,  c. ; carole ,  d. ; ferro ,  g. ; shvets ,  g. critically coupled surface phonon - polariton excitation in silicon carbide .
+expr . _ * 2007 * , _ 34 _ , 26672669 caldwell ,  j.  d. ; glembocki ,  o.  j. ; francescato ,  y. ; sharac ,  n. ; giannini ,  v. ; bezares ,  f.  j. ; long ,  j.  p. ; owrutsky ,  j.  c. ; vurgaftman ,  i. ; tischler ,  j.  g. ; wheeler ,  v.  d. ; bassim ,  n.  d. ; shirey ,  l.  m. ; kasica ,  r. ; maier ,  s.  a. low - loss , extreme subdiffraction photon confinement via silicon carbide localized surface phonon polariton resonators .
+_ nano lett . _ * 2013 * , _ 13 _ , 36903697 chen ,  y. ; francescato ,  y. ; caldwell ,  j.  d. ; giannini ,  v. ; ma ,  t. w.  w. ; glembocki ,  o.  j. ; bezares ,  f.  j. ; taubner ,  t. ; kasica ,  r. ; hong ,  m. ; maier ,  s.  a. spectral tuning of localized surface phonon polariton resonators for low - loss mid - ir applications .
+_ acs photonics _ * 2014 * , _ 1 _ , 718724 caldwell ,  j.  d. ; kretinin ,  a.  v. ; chen ,  y. ; giannini ,  v. ; fogler ,  m.  m. ; francescato ,  y. ; ellis ,  c.  t. ; tischler ,  j.  g. ; woods ,  c.  r. ; giles ,  a.  j. ; hong ,  m. ; watanabe ,  k. ; taniguchi ,  t. ; maier ,  s.  a. ; novoselov ,  k.  s. sub - diffractional volume - confined polaritons in the natural hyperbolic material hexagonal boron nitride .
+commun . _ * 2014 * , _ 5 _ , 5221 dai ,  s. et  al .
+tunable phonon polaritons in atomically thin van der waals crystals of boron nitride .
+_ science _ * 2014 * , _ 343 _ , 11251129 caldwell ,  j.  d. ; vurgaftman ,  i. ; tischler ,  j.  g. probing hyperbolic polaritons . _ nat .
+photon . _ * 2015 * , _ 9 _ , 638640 li ,  p. ; lewin ,  m. ; kretinin ,  a.  v. ; caldwell ,  j.  d. ; novoselov ,  k.  s. ; taniguchi ,  t. ; watanabe ,  k. ; gaussmann ,  f. ; taubner ,  t. hyperbolic phonon - polaritons in boron nitride for near - field optical imaging and focusing .
+commun . _ * 2015 * , _ 6 _ , 7507 dai ,  s. ; ma ,  q. ; andersen ,  t. ; mcleod ,  a.  s. ; fei ,  z. ; liu ,  m.  k. ; wagner ,  m. ; watanabe ,  k. ; taniguchi ,  t. ; thiemens ,  m. ; keilmann ,  f. ; jarillo - herrero ,  p. ; fogler ,  m.  m. ; basov ,  d.  n. subdiffractional focusing and guiding of polaritonic rays in a natural hyperbolic material .
+commun . _ * 2015 * , _ 6 _ , 6963 caldwell ,  j.  d. ; lindsay ,  l. ; giannini ,  v. ; vurgaftman ,  i. ; reinecke ,  t.  l. ; maier ,  s.  a. ; glembocki ,  o.  j. low - loss , infrared and terahertz nanophotonics using surface phonon polaritons .
+_ nanophotonics _ * 2014 * , _ 4 _ , 4468 ferguson ,  b. ; zhang ,  x .- c .
+materials for terahertz science and technology .
+photon . _ * 2002 * , _ 1 _ , 2633 ulbricht ,  r. ; hendry ,  e. ; shan ,  j. ; heinz ,  t.  f. ; bonn ,  m. carrier dynamics in semiconductors studied with time - resolved terahertz spectroscopy . _
+_ * 2011 * , _ 83 _ , 543586 kampfrath ,  t. ; tanaka ,  k. ; nelson ,  k.  a. resonant and nonresonant control over matter and light by intense terahertz transients .
+photon . _ * 2013 * , _ 7 _ , 680690 schllkopf ,  w. ; gewinner ,  s. ; junkes ,  h. ; paarmann ,  a. ; von helden ,  g. ; bluem ,  h. ; todd ,  a. m.  m. the new ir and thz fel facility at the fritz haber institute in berlin .
+spie _ * 2015 * , _ 9512 _ , 95121l paarmann ,  a. ; razdolski ,  i. ; melnikov ,  a. ; gewinner ,  s. ; schllkopf ,  w. ; wolf ,  m. second harmonic generation spectroscopy in the reststrahl band of sic using an infrared free - electron laser .
+lett . _ * 2015 * , _ 107 _ , 081101 ,  a. ; razdolski ,  i. ; gewinner ,  s. ; schoellkopf ,  w. ; wolf ,  m. effects of crystal anisotropy on optical phonon resonances in the mid - infrared second harmonic response of sic . *
+2016 * , arxiv:1607.05207 [ condmat.mtrlsci ] carpetti ,  a. ; walsh ,  g.  f. ; minissale ,  s. ; trevino ,  j. ; forestiere ,  c. ; miano ,  g. ; negro ,  l.  d. multipolar second harmonic generation from planar arrays of au nanoparticles . _ opt . expr . _ * 2012 * , _ 20 _ , 1579715806 canfield ,  b.  k. ; husu ,  h. ; laukkanen ,  j. ; bai ,  b. ; kuittinen ,  m. ; turunen ,  j. ; kauranen ,  m. local field asymmetry drives second - harmonic generation in noncentrosymmetric nanodimers .
+_ nano lett . _ * 2007 * , _ 7 _ , 12511255 raether ,  h. _ surface plasmons on smooth and rough surfaces and on gratings _ ; springer - verlag : berlin , 1988 agarwal ,  g.  s. ; jha ,  s.  s. surface - enhanced second - harmonic generation at a metallic grating . _
+b _ * 1982 * , _ 26 _ , 482 coutaz ,  j. experimental study of second - harmonic generation from silver gratings of various groove depths . _ j. opt
+b _ * 1987 * , _ 4 _ , 105106 quail ,  j.  c. ; simon ,  h.  j. second - harmonic generation from a silver grating with surface plasmons .
+b _ * 1988 * , _ 5 _ , 325329 razdolski ,  i. ; parchenko ,  s. ; stupakiewicz ,  a. ; semin ,  s. ; stognij ,  a. ; maziewski ,  a. ; kirilyuk ,  a. ; rasing ,  t. second - harmonic generation from a magnetic buried interface enhanced by an interplay of surface plasma resonances . _ acs phot . _
+* 2015 * , _ 2 _ , 2026 gubbin ,  c.  r. ; martini ,  f. ; politi ,  a. ; maier ,  s.  a. ; de  liberato ,  s. strong and coherent coupling between localized and propagating phonon polaritons .
+_ * 2016 * , _ 116 _ , 246402 shan ,  j. ; dadap ,  j. ; stiopkin ,  i. ; reider ,  g. ; heinz ,  t. experimental study of optical second - harmonic scattering from spherical nanoparticles .
+b _ * 2006 * , _ 73 _ , 023819 kujala ,  s. ; canfield ,  b.  k. ; kauranen ,  m. ; svirko ,  y. ; turunen ,  j. phonon - enhanced light - matter interaction at the nanometre scale . _ phys .
+_ * 2007 * , _ 98 _ , 167403 bachelier ,  g. ; butet ,  j. ; russier - antoine ,  i. ; jonin ,  c. ; benichou ,  e. ; brevet ,  p .- f .
+origin of optical second - harmonic generation in spherical gold nanoparticles : local surface and nonlocal bulk contributions .
+b _ * 2010 * , _ 82 _ , 235403 butet ,  j. ; bachelier ,  g. ; russier - antoine ,  i. ; jonin ,  c. ; benichou ,  e. ; brevet ,  p .- f . interference between selected dipoles and octupoles in the optical second - harmonic generation from spherical gold nanoparticles . _ phys .
+lett . _ * 2010 * , _ 105 _ , 077401 razdolski ,  i. ; gheorghe ,  d.  g. ; melander ,  e. ; hjrvarsson ,  b. ; patoka ,  p. ; kimel ,  a.  v. ; kirilyuk ,  a. ; papaioannou ,  e.  t. ; rasing ,  t. nonlocal nonlinear magneto - optical response of a magnetoplasmonic crystal .
+b _ * 2013 * , _ 88 _ , 075436 kruk ,  s. ; weismann ,  m. ; bykov ,  a.  y. ; mamonov ,  e.  a. ; kolmychek ,  i.  a. ; murzina ,  t. ; panoiu ,  n.  c. ; neshev ,  d.  n. ; kivshar ,  y.  s. enhanced magnetic second - harmonic generation from resonant metasurfaces
+. _ acs photonics _ * 2015 * , _ 2 _ , 10071012 hille ,  a. ; moeferdt ,  m. ; wolff ,  c. ; matyssek ,  c. ; rodriguez - oliveros ,  r. ; prohm ,  c. ; niegemann ,  j. ; grafstrom ,  s. ; eng ,  l.  m. ; ; busch ,  k. second harmonic generation from metal nano - particle resonators : numerical analysis on the basis of the hydrodynamic drude model .
+_ j. phys .
+c _ * 2016 * , _ 120 _ , 11631169 bluet ,  j. ; chourou ,  k. ; anikin ,  m. ; madar ,  r. weak phonon modes observation using infrared reflectivity for 4h , 6h and 15r polytypes .
+eng . _ * 1999 * , _ b6162 _ , 212216 patrick ,  l. infrared absorption in sic polytypes . _ phys .
+rev . _ * 1967 * , _ 167 _ , 809813 feldman ,  d.  w. ; parker , jr . ,  j.  h. ; choyke ,  w.  j. ; patrick ,  l. phonon dispersion curves by raman scattering in sic , polytypes 3c , 4h , 6h , 15r , and 21r . _
+rev . _ * 1968 * , _ 173 _ , 787793 engelbrecht ,  f. ; helbig ,  r. effect of crystal anisotropy on the infrared reflectivity of 6h  sic .
+b _ * 1993 * , _ 48 _ , 1569815707 metzger ,  b. ; gui ,  l. ; fuchs ,  j. ; floess ,  d. ; hentschel ,  m. ; giessen ,  h. strong enhancement of second harmonic emission by plasmonic resonances at the second harmonic wavelength .
+_ nano lett . _ * 2015 * , _ 15 _ , 39173922 husu ,  h. ; canfield ,  b.  k. ; laukkanen ,  j. ; bai ,  b. ; kuittinen ,  m. ; turunen ,  j. ; kauranen ,  m. local - field effects in the nonlinear optical response of metamaterials .
+_ metamaterials _ * 2008 * , _ 2 _ , 155168 palomba ,  s. ; novotny ,  l. nonlinear excitation of surface plasmon polaritons by four - wave mixing .
+lett . _ * 2008 * , _ 101 _ , 056802 carpetti ,  a. ; forestiere ,  c. ; negro ,  l.  d. ; miano ,  g. full - wave analytical solution of second - harmonic generation in metal nanospheres .
+_ plasmonics _ * 2014 * , _ 9 _ , 151166 razdolski ,  i. ; makarov ,  d. ; schmidt ,  o.  g. ; kirilyuk ,  a. ; rasing ,  t. ; temnov ,  v.  v. nonlinear surface magnetoplasmonics in kretschmann multilayers .
+_ acs photonics _ * 2016 * , _ 3 _ , 179183 dai ,  s. et  al .
+graphene on hexagonal boron nitride as a tunable hyperbolic metamaterial .
+nano . _ * 2015 * , _ 10 _ , 682687 caldwell ,  j.  d. ; vurgaftman ,  i. ; tischler ,  j.  g. ; glembocki ,  o.  j. ; owrutsky ,  j.  c. ; reinecke ,  t.  l. atomic - scale photonic hybrids for mid - infrared and terahertz nanophotonics .
+nano . _ * 2015 * , _ 11 _ , 915

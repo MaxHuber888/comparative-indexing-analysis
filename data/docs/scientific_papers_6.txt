@@ -1,0 +1,318 @@
+let @xmath1 . let @xmath2\longrightarrow [
+0,\pi_{p , q}/2]$ ] be the integral @xmath3 where @xmath4 . the @xmath0-_sine functions _
+, @xmath5 , $ ] are defined to be the inverses of @xmath6 , @xmath7\ ] ] extended to @xmath8 by the rules @xmath9 which make them periodic , continuous , odd with respect to 0 and even with respect to @xmath10 .
+these are natural generalisations of the sine function , indeed @xmath11 and they are known to share a number of remarkable properties with their classical counterpart @xcite
+.    among these properties lies the fundamental question of completeness and linear independence of the family @xmath12 where @xmath13 .
+this question has received some attention recently @xcite , with a particular emphasis on the case @xmath14 .
+in the latter instance , @xmath15 is the set of eigenfunctions of the generalised eigenvalue problem for the one - dimensional @xmath16-laplacian subject to dirichlet boundary conditions @xcite , which is known to be of relevance in the theory of slow / fast diffusion processes , @xcite .
+see also the related papers @xcite .
+set @xmath17 , so that @xmath18 is a schauder basis of the banach space @xmath19 for all @xmath20 .
+the family @xmath21 is also a schauder basis of @xmath22 if and only if the corresponding _ change of coordinates map _ , @xmath23 , extends to a linear homeomorphism of @xmath22 .
+the fourier coefficients of @xmath24 associated to @xmath25 obey the relation @xmath26 for @xmath27 , let @xmath28 ( note that @xmath29 for @xmath30 ) and let @xmath31 be the linear isometry such that @xmath32 .
+then @xmath33 so that the change of coordinates takes the form @xmath34    notions of `` nearness '' between bases of banach spaces are known to play a fundamental role in classical mathematical analysis , @xcite , @xcite or @xcite .
+unfortunately , the expansion strongly suggests that @xmath21 is not globally `` near '' @xmath18 , e.g. in the krein - lyusternik or the paley - wiener sense , @xcite .
+therefore classical arguments , such as those involving the paley - wiener stability theorem , are unlikely to be directly applicable in the present context .
+in fact , more rudimentary methods can be invoked in order to examine the invertibility of the change of coordinates map . from it
+follows that @xmath35 in @xcite it was claimed that the left side of held true for all @xmath36 where @xmath37 was determined to lie in the segment @xmath38 .
+hence @xmath21 would be a schauder basis , whenever @xmath39 .
+further developments in this respect were recently reported by bushell and edmunds @xcite .
+these authors cleverly fixed a gap originally published in ( * ? ? ?
+* lemma  5 ) and observed that , as the left side of ceases to hold true whenever @xmath40 the argument will break for @xmath14 near @xmath41 .
+therefore , the basisness question for @xmath21 should be tackled by different means in the regime @xmath42 .
+more recently @xcite , edmunds , gurka and lang , employed in order to show invertibility of @xmath43 for general pairs @xmath44 , as long as @xmath45 since is guaranteed whenever @xmath46 this allows @xmath47 for @xmath48
+. however , note that a direct substitution of @xmath14 in , only leads to the sub - optimal condition @xmath49 .    in section  [ linearind ] below
+we show that the family @xmath21 is @xmath50-_linearly independent _ for all @xmath1 , see theorem  [ likernelandspan ] . in section  [ ribap ]
+we establish conditions ensuring that @xmath43 is a homeomorphism of @xmath51 in a neighbourhood of the region in the @xmath44-plane where @xmath52 see theorem  [ inprovement ] and also corollary  [ beyonda ] . for this purpose , in section  [ criteria ] we find two further criteria which generalise in the hilbert space setting , see corollaries  [ main_1 ] and [ main_2 ] . in this case , the _ riesz constant _ , @xmath53 characterises how @xmath21 deviates from being an orthonormal basis .
+these new statements yield upper bounds for @xmath54 , which improve upon those obtained from the right side of , even when the latter is applicable .
+the formulation of the alternatives to presented below relies crucially on work developed in section  [ toep_s ] . from lemma  [ multareshifts ]
+we compute explicitly the wold decomposition of the isometries @xmath31 : they turn out to be shifts of infinite multiplicity
+. hence we can extract from the expansion suitable components which are toeplitz operators of scalar type acting on appropriate hardy spaces . as the theory becomes quite technical for the case @xmath55 and all the estimates analogous to those reported below would involve a dependence on the parameter @xmath56
+, we have chosen to restrict our attention with regards to these improvements only to the already interesting hilbert space setting .
+section  [ casep = q ] is concerned with particular details of the case of equal indices @xmath14 , and it involves results on both the general case @xmath20 and the specific case @xmath57 .
+rather curiously , we have found another gap which renders incomplete the proof of invertibility of @xmath43 for @xmath58 originally published in @xcite .
+see remark  [ rem_gap ] .
+moreover , the application of ( * ? ? ?
+* theorem  4.5 ) only gets to a _
+basisness threshold _ of @xmath59 , where @xmath60 is defined by the identity @xmath61 see also ( * ? ? ?
+* remark  2.1 ) . in theorem  [ fixingbbcdg ]
+we show that @xmath21 is indeed a schauder basis of @xmath22 for @xmath62 where @xmath63 , see ( * ? ? ?
+* problem  1 ) . as @xmath64 , basisness
+is now guaranteed for all @xmath65 .
+see figure  [ impro_fig_p = q ] .
+in section  [ nume ] we report on our current knowledge of the different thresholds for invertibility of the change of coordinates map , both in the case of equal indices and otherwise . based on the new criteria found in section  [ criteria ] , we formulate a general test of invertibility for @xmath43 which is amenable to analytical and numerical investigation .
+this test involves finding sharp bounds on the first few coefficients @xmath66 .
+see proposition  [ beyond2 ] . for the case of equal indices
+, this test indicates that @xmath21 is a riesz basis of @xmath51 for @xmath67 where @xmath68 .
+all the numerical quantities reported in this paper are accurate up to the last digit shown , which is rounded to the nearest integer . in the appendix
+we have included fully reproducible computer codes which can be employed to verify the calculations reported .
+a family @xmath69 in a banach space is called @xmath50-linearly independent @xcite , if @xmath70    [ likernelandspan ] for all @xmath1 , the family @xmath21 is @xmath50-linearly independent in @xmath22 .
+moreover , if the linear extension of the map @xmath23 is a bounded operator @xmath71 , then @xmath72    for the first assertion we show that @xmath73 .
+let @xmath74 be such that @xmath75 where the series is convergent in the norm of @xmath22 .
+then @xmath76 hence @xmath77 we show that all @xmath78 by means of a double induction argument .
+suppose that @xmath79 .
+we prove that all @xmath80 . indeed , clearly @xmath81 from with @xmath82 .
+now assume inductively that @xmath29 for all @xmath83 . from for @xmath84
+we get @xmath85 then @xmath80 for all @xmath86 . as this
+would contradict the fact that @xmath87 , necessarily @xmath88 .
+suppose now inductively that @xmath89 and @xmath90 .
+we prove that again all @xmath80 .
+firstly , @xmath81 from with @xmath91 , because @xmath92 secondly , assume by induction that @xmath29 for all @xmath93 . from for @xmath94
+we get @xmath95 the latter equality is a consequence of the fact that , for @xmath96 with @xmath97 and @xmath98 , either @xmath99 ( indices for the @xmath100 ) or @xmath101 ( indices for the @xmath102 ) .
+hence @xmath80 for all @xmath86 .
+as this would again contradict the fact that @xmath87 , necessarily all @xmath103 so that @xmath104 .
+the second assertion is shown as follows .
+assume that @xmath105 .
+if @xmath106 , then @xmath107 for all @xmath108 , so @xmath109 which in turns means that @xmath110 for all @xmath111 . on the other hand , if the latter holds true for @xmath112 , then @xmath113 for all @xmath114 , so @xmath115 , as required .    therefore , @xmath21 is a riesz basis of @xmath51 if and only if @xmath105 and @xmath116 .
+a simple example illustrates how a family of dilated periodic functions can break its property of being a riesz basis .
+[ ex1 ] let @xmath117 $ ] .
+take @xmath118 by virtue of lemma  [ toep ] below , @xmath119 is a riesz basis of @xmath51 if and only if @xmath120 .
+for @xmath121 we have an orthonormal set .
+however it is not complete , as it clearly misses the infinite - dimensional subspace @xmath122 .
+the fundamental decomposition of @xmath43 given in allows us to extract suitable components formed by toeplitz operators of scalar type , @xcite . in order to identify these components , we begin by determining the wold decomposition of the isometries @xmath31 , @xcite
+. see remark  [ diri ] .
+[ multareshifts ] for all @xmath123 , @xmath124 is a shift of infinite multiplicity .
+define @xmath125 then @xmath126 for @xmath127 , @xmath128 , and @xmath129 one - to - one and onto for all @xmath130 .
+therefore indeed @xmath31 is a shift of multiplicity @xmath131 .
+let @xmath132 .
+the hardy spaces of functions in @xmath133 with values in the banach space @xmath134 are denoted below by @xmath135 .
+let @xmath136 be a holomorphic function on @xmath137 and fix @xmath138 .
+let @xmath139 let the corresponding toeplitz operator ( * ? ? ?
+* ( 5 - 1 ) ) @xmath140 let @xmath141 by virtue of lemma  [ multareshifts ] ( see ( * ? ? ? * and  5.2 ) ) , there exists an invertible isometry @xmath142 such that @xmath143 .
+below we write @xmath144    [ generic_toep ] @xmath145 in is invertible if and only if @xmath146 .
+moreover @xmath147    observe that @xmath148 is scalar analytic in the sense of @xcite .
+since @xmath149 is holomorphic in @xmath137 , then @xmath150 and @xmath151 ( * ? ? ?
+* theorem  a(iii ) ) .    if @xmath152 , then @xmath153 is also holomorphic in @xmath137 .
+the scalar toeplitz operator @xmath154 is invertible if and only if @xmath146 .
+moreover , @xcite , @xmath155 the matrix of @xmath148 has the block representation @xcite @xmath156 the matrix associated to @xmath154 has exactly the same scalar form , replacing @xmath157 by @xmath158 . then , @xmath148 is invertible if and only if @xmath154 is invertible , and @xmath159 hence @xmath160    [ pert ] let @xmath161 for @xmath145 as in . if @xmath162 , then @xmath43 is invertible .
+moreover @xmath163    since @xmath145 is invertible , write @xmath164 .
+if additionally @xmath165 , then @xmath166    [ diri ] it is possible to characterise the change of coordinates @xmath43 in terms of dirichlet series , and recover some of the results here and below directly from this characterisation .
+see for example the insightful paper @xcite and the complete list of references provided in the addendum @xcite .
+however , the full technology of dirichlet series is not needed in the present context .
+a further development in this direction will be reported elsewhere .
+a proof of can be achieved by applying corollary  [ pert ] assuming that @xmath167 our next goal is to formulate concrete sufficient condition for the invertibility of @xmath43 and corresponding bounds on @xmath54 , which improve upon whenever @xmath57 . for this purpose
+we apply corollary  [ pert ] assuming that @xmath145 has now the three - term expansion @xmath168    let @xmath169 let @xmath170 see figure  [ region ] .
+optimal region of invertibility in lemma  [ toep ] . in this picture
+the horizontal axis is @xmath171 and the vertical axis is @xmath172.,height=377 ]    [ toep ] let @xmath57 .
+let @xmath173 .
+the operator @xmath174 is invertible if and only if @xmath175 .
+moreover @xmath176    let @xmath177 be associated with @xmath145 as in section  [ toep_s ] .
+the first assertion is a consequence of the following observation . if @xmath178 , then @xmath179 has roots @xmath180 conjugate with each other and @xmath181
+if and only if @xmath182 . otherwise @xmath179 has two real roots .
+if @xmath183 and @xmath184 , then the smallest in modulus root of @xmath179 would lie in @xmath137 if and only if @xmath185 .
+if @xmath186 and @xmath187 , then the root of @xmath179 that is smallest in modulus would lie in @xmath137 if and only if @xmath188 .
+for the second assertion , let @xmath175 and @xmath189 .
+by virtue of the maximum principle on @xmath179 and @xmath190 , @xmath191 since @xmath192 then @xmath193 if and only if @xmath194 .
+for @xmath195 , we get @xmath196 and @xmath197 . for @xmath198
+, we get @xmath199 with the condition @xmath200 . by virtue of theorem
+[ generic_toep ] , we obtain the claimed statement .    since @xmath201 for all @xmath202 , then @xmath203 .
+below we substitute @xmath204 and @xmath205 , then apply lemma  [ toep ] appropriately in order to determine the invertibility of @xmath43 whenever pairs @xmath44 lie in different regions of the @xmath44-plane . for this purpose
+we establish the following hierarchy between @xmath206 and @xmath207 for @xmath208 , whenever the latter are non - negative .
+[ ajint ] for @xmath209 or @xmath210 , we have @xmath211 .    firstly observe that @xmath212 is continuous , it increases for all @xmath213 and it vanishes at @xmath214 .
+let @xmath209 .
+set @xmath215 { \mathrm{d}}x \qquad \text{and } \\
+i_1=\int_{\frac14}^{\frac12 } \sin_{p , q}(\pi_{p , q}x ) [ \sin(\pi x)-\sin(3\pi x ) ] { \mathrm{d}}x . \end{gathered}\ ] ] since @xmath216 then @xmath217 and @xmath218 .
+as @xmath219 is odd with respect to @xmath220 and @xmath221 is increasing in the segment @xmath222 , then also @xmath223 .
+hence @xmath224 ensuring the first statement of the lemma .
+let @xmath210 .
+a straightforward calculation shows that @xmath225 if and only if , either @xmath226 or @xmath227 .
+thus , @xmath228 has exactly five zeros in the segment @xmath229 $ ] located at : @xmath230    set @xmath231 and @xmath232 { \mathrm{d}}x .\ ] ] then @xmath233 for @xmath234 and @xmath235 for @xmath236 . since @xmath237 for all @xmath238 , then @xmath239 hence @xmath240
+the next two corollaries are consequences of corollary  [ pert ] and lemma  [ toep ] , and are among the main results of this paper .
+[ main_1 ] @xmath241    let @xmath161 where @xmath242 the top on left side of and the fact that @xmath203 imply @xmath243 thus , the bottom on the left side of yields @xmath244 so indeed @xmath43 is invertible .
+the estimate on the riesz constant is deduced from the triangle inequality .    since @xmath203
+, supersedes , only when the pair @xmath44 is such that @xmath245 . from this corollary
+we see below that the change of coordinates is invertible in a neighbourhood of the threshold set by the condition .
+see proposition  [ beyond2 ] and figures  [ impro_fig_p = q ] and [ th10ab ] .
+[ main_2 ] @xmath246    the proof is similar to that of corollary  [ main_1 ] .
+we see below that corollary  [ main_1 ] is slightly more useful than corollary  [ main_2 ] in the context of the dilated @xmath0-sine functions
+. however the latter is needed in the proof of the main theorem  [ inprovement ] .
+it is of course natural to ask what consequences can be derived from the other statement in lemma  [ toep ] .
+for @xmath247 we have @xmath248 . hence the same argument as in the proofs of corollaries [ main_1 ] and [ main_2 ] would reduce to , and
+in this case there is no improvement .
+our first goal in this section is to establish that the change of coordinates map associated to the family @xmath21 is invertible beyond the region of applicability of .
+we begin by recalling a calculation which was performed in the proof of ( * ? ? ?
+* proposition  4.1 ) and which will be invoked several times below .
+let @xmath249 be the inverse function of @xmath250
+. then @xmath251 indeed , integrating by parts twice and changing the variable of integration to @xmath252 yields @xmath253 ' \sin(j\pi x ) { \mathrm{d}}x \\     & = -\frac{2 \sqrt{2 } \pi_{p , q}}{j^2\pi^2 } \int_0 ^ 1 \sin \left ( \frac{j \pi}{\pi_{p , q } } a(t)\right ) { \mathrm{d}}t    .
+\end{aligned}\ ] ]    [ inprovement ] let @xmath57 .
+suppose that the pair @xmath254 is such that the following two conditions are satisfied    1 .
+[ improa ] @xmath255 2 .
+[ improc ] @xmath256 .
+then there exists a neighbourhood @xmath257 , such that the change of coordinates @xmath43 is invertible for all @xmath258 .    from the dominated convergence theorem
+, it follows that each @xmath259 is a continuous function of the parameters @xmath16 and @xmath260 .
+therefore , by virtue of and a further application of the dominated convergence theorem , also @xmath261 is continuous in the parameters @xmath16 and @xmath260 . here
+@xmath262 can be any fixed set of indices , but below in this proof we only need to consider @xmath263 for the first possibility and @xmath264 for the second possibility .
+write @xmath265 .
+the hypothesis implies @xmath266 , because @xmath267 therefore @xmath268 for a suitable neighbourhood @xmath269 .
+two possibilities are now in place .
+note that @xmath271 is an immediate consequence of [ improa ] and [ improc ] . by continuity of all quantities involved ,
+there exists a neighbourhood @xmath272 such that the left hand side and hence the right hand side of hold true for all @xmath273 .
+substitute @xmath275 and @xmath276 .
+if @xmath277 , then @xmath278 indeed , the conditions on @xmath171 and @xmath172 give @xmath279 as @xmath280 , @xmath281 thus @xmath282 which is .
+hence @xmath283 thus , once again by continuity of all quantities involved , there exists a neighbourhood @xmath284 such that the left hand side and hence the right hand side of hold true for all @xmath285 .
+the conclusion follows by defining either @xmath286 or @xmath287 .
+we now examine other further consequences of the corollaries [ main_1 ] and [ main_2 ] .
+[ impro_implicit ] any of the following conditions ensure the invertibility of the change of coordinates map @xmath288 .    1 .   [ aimplicit ] ( @xmath20 ) : @xmath289 2
+.   [ bimplicit ] ( @xmath57 ) : @xmath290 , @xmath245 , @xmath291 and @xmath292 3 .
+[ cimplicit ] ( @xmath57 ) : @xmath290 , @xmath245 , @xmath293 and @xmath294    from , it follows that @xmath295 hence the condition [ aimplicit ] implies that the hypothesis is satisfied .
+by virtue of lemma  [ ajint ] , it is guaranteed that @xmath296 in the settings of [ bimplicit ] or [ cimplicit ] . from
+, it also follows that @xmath297 combining each one of these assertions with and , respectively , immediately leads to the claimed statement .
+we recover ( * ? ? ?
+* corollary  4.3 ) from the part [ aimplicit ] of this theorem by observing that for all @xmath1 , @xmath298 in fact , for @xmath299 , the better estimate @xmath300 ensures invertibility of @xmath43 for all @xmath20 whenever @xmath301 see figures  [ th10ab ] and [ th10c ] .
+we now consider in closer detail the particular case @xmath302 .
+our analysis requires setting various sharp upper and lower bounds on the coefficients @xmath303 for @xmath304 .
+this is our first goal .
+employed to show bound [ a3l ] in lemma  [ ajpositive ] . for reference
+we also show @xmath305 , @xmath306 , @xmath307 and @xmath308 .
+[ fig : interp ] , width=340 ]    [ ajpositive ]    1 .
+[ a3l ] @xmath309 for all @xmath310 2 .
+[ a5l ] @xmath311 for all @xmath312 3 .
+[ a7l ] @xmath313 for all @xmath312 4 .
+[ a9l ] @xmath314 for all @xmath315    all the stated bounds are determined by integrating a suitable approximation of @xmath316 .
+each one requires a different set of quadrature points , but the general structure of the arguments in all cases is similar . without further mention ,
+below we repeatedly use the fact that in terms of hypergeometric functions , @xmath317.\ ] ]      let @xmath318 for @xmath319 let @xmath320 see figure  [ fig : interp ] . since @xmath321 and @xmath322 is an increasing function of @xmath323 , then @xmath324    according to ( * ? ? ?
+* corollary  4.4 ) , @xmath316 increases as @xmath16 decreases for any fixed @xmath325 .
+let @xmath16 be as in the hypothesis .
+then @xmath326 and similarly @xmath327 by virtue of ( * ? ? ?
+* lemma  3 ) the function @xmath322 is strictly concave for @xmath323 .
+then , in fact , @xmath328    let @xmath329 since @xmath330 for @xmath331 and @xmath332 , @xmath333      note that @xmath334 set @xmath335 then @xmath336 and so @xmath337 also @xmath338
+so @xmath339    let @xmath16 be as in the hypothesis .
+then , similarly to the previous case [ a3l ] , @xmath340 set @xmath341 by strict concavity and , @xmath342 let @xmath343 then @xmath344 as claimed .
+let @xmath16 be as in the hypothesis .
+set @xmath345 then @xmath346 hence @xmath347 put @xmath348 then , @xmath349 let @xmath350 since @xmath351 is negative for @xmath352 and positive for @xmath353 , then @xmath354 .
+hence @xmath355      note that @xmath356 let @xmath16 be as in the hypothesis .
+set @xmath357 then @xmath358 hence @xmath347 put @xmath359 then , @xmath360 let @xmath361 then @xmath362 .
+hence @xmath363    the next statement is a direct consequence of combining [ a3l ] and [ a9l ] from this lemma with theorem  [ inprovement ] .
+[ beyonda ] set @xmath57 and suppose that @xmath364 is such that @xmath365 there exists @xmath366 such that @xmath43 is invertible for all @xmath367 .
+see figure  [ impro_fig_p = q ] .
+[ rem_gap ] in @xcite it was claimed that the hypothesis of held true whenever @xmath36 for a suitable @xmath368 .
+the argument supporting this claim @xcite was separated into two cases : @xmath369 and @xmath370 . with our definition by a factor of @xmath371 .
+note that the ground eigenfunction of the @xmath16-laplacian equation in @xcite is denoted by @xmath372 and it equals @xmath373 as defined above .
+a key observation here is the @xmath16-pythagorean identity @xmath374 .
+] of the fourier coefficients , in the latter case it was claimed that @xmath375 was bounded above by @xmath376 as it turns , there is a missing power 2 in the term @xmath377 for this claim to be true .
+this corresponds to taking second derivatives of @xmath378 and it can be seen by applying the cauchy - schwartz inequality in .
+the missing factor is crucial in the argument and renders the proof of ( * ? ? ?
+* theorem  1 ) incomplete in the latter case .    in the paper
+@xcite published a few years later , it was claimed that the hypothesis of held true for @xmath379 where @xmath60 is defined by .
+it was then claimed that an approximated solution of was near @xmath380 .
+an accurate numerical approximation of , based on analytical bounds on @xmath381 , give the correct digits @xmath382 .
+therefore neither the results of @xcite nor those of @xcite include a complete proof of invertibility of the change of coordinates in a neighbourhood of @xmath383 .    accurate numerical estimation of @xmath381 show that the identity is valid as long as @xmath384 , which improves slightly upon the value @xmath60 from @xcite .
+however , as remarked in @xcite , the upper bound @xmath385 ensuring and hence the validity of theorem  [ impro_implicit]-[aimplicit ] , is too crude for small values of @xmath16 . note for example that the correct regime is @xmath386 whereas @xmath387 as @xmath388 ( see appendix  [ ap1 ] ) .
+therefore , in order to determine invertibility of @xmath43 in the vicinity of @xmath389 , it is necessary to find sharper bounds for the first few terms @xmath375 , and employ directly .
+this is the purpose of the next lemma .
+see figure  [ impro_fig_p = q ] .
+[ ajbounds ] let @xmath312
+. then    1 .
+[ a1l ] @xmath390 2 .
+[ a3u ] @xmath391 3 .
+[ a5u ] @xmath392 4 .
+[ a7u ] @xmath393    we proceed in a similar way as in the proof of lemma  [ ajpositive ] .
+let @xmath16 be as in the hypothesis
+.      set @xmath394 then @xmath395 and so @xmath347 let @xmath396 then , @xmath397 hence @xmath398      set @xmath399 then @xmath400 let @xmath401 then , @xmath402 and hence @xmath403      set @xmath404 and let @xmath405 then , @xmath406 , so @xmath407      set @xmath408 and @xmath409 then , @xmath406 and @xmath410 , so @xmath411    the following result fixes the proof of the claim made in ( * ? ? ?
+* claim  2 ) and improves the threshold of invertibility determined in ( * ? ? ?
+* theorem  4.5 ) .
+[ fixingbbcdg ] there exists @xmath412 , such that @xmath413\pi^2}{2\sqrt{2}\left ( \frac{\pi^2}{8}-1- \frac19-\frac{1}{25}-\frac{1}{49 }   \right ) } \qquad   \forall   p\in\left(p_3 , \frac{6}{5}\right).\ ] ] the family @xmath21 is a schauder basis of @xmath414 for all @xmath415 and @xmath20 .
+both sides of are continuous functions of the parameter @xmath416 .
+the right hand side is bounded .
+the left side is decreasing as @xmath16 increases and @xmath387 as @xmath388 . by virtue of lemma  [ ajbounds ] , @xmath417 hence the first statement is ensured as a consequence of the intermediate value theorem .    from
+, it follows that @xmath418 for all @xmath419 .
+lemma  [ ajpositive ] guarantees positivity of @xmath207 for @xmath420 .
+then , by re - arranging this inequality , the second statement becomes a direct consequence of .
+a sharp numerical approximation of the solution of the equation with equality in gives @xmath421 .
+see figure  [ impro_fig_p = q ] .
+if sharp bounds on the first few fourier coefficients @xmath259 are at hand , the approach employed above for the proof of theorem  [ fixingbbcdg ] can also be combined with the criteria or . a natural question is whether this would lead to a positive answer to the question of invertibility for @xmath43 , whenever @xmath422 in the case of , we see below that this is indeed the case .
+the key statement is summarised as follows .
+[ beyond2 ] let @xmath57 and @xmath423 .
+suppose that    1 .
+@xmath290 , @xmath245 and @xmath424 for all other @xmath425 .
+2 .   @xmath426 .    if @xmath427 then @xmath43 is invertible .
+assume that the hypotheses are satisfied .
+the combination of and gives @xmath428 then @xmath429 and so the conclusion follows from .
+we now discuss the connection between the different statements established in the previous sections with those of the papers @xcite , @xcite and @xcite . for this purpose
+we consider various accurate approximations of @xmath207 and @xmath430 .
+these approximations are based on the next explicit formulae : @xmath431 and @xmath432 here @xmath433 is the incomplete beta function , @xmath434 is the beta function and @xmath435 is the gamma function .
+moreover , by considering exactly the steps described in @xcite for the proof of ( * ? ? ?
+* ( 4.15 ) ) , it follows that @xmath436{\mathrm{d}}x \\                    & = \frac{\sqrt{2}}{\pi}\int_0 ^ 1 \log\left[\cot \left ( \frac{\pi}{4 } \
+{ \mathcal{i}}\ !
+\!\left(\frac1q,\frac{p-1}{p};x^q\right )    \right)\right ] { \mathrm{d}}x .
+\end{aligned}\ ] ]    .
+the positions of @xmath37 , @xmath437 and the value of @xmath438 are set only for illustration purposes , as we are only certain that @xmath439 .
+black indicates relevance to the general case @xmath20 while red indicates relevance for the case @xmath57 .
+[ impro_fig_p = q],height=241 ]    let us begin with the case of equal indices .
+see figure  [ impro_fig_p = q ] . as mentioned in the introduction , @xmath440 for @xmath41 .
+the condition @xmath441 is fulfilled for all @xmath442 where @xmath443 .
+the fourier coefficients @xmath444 for all @xmath445 whenever @xmath446 .
+remarkably we need to get to @xmath447 , for a numerical verification of the conditions of proposition  [ beyond2 ] allowing @xmath448 .
+indeed we remark the following .    1 .   for @xmath449 ,
+the condition hold true only for @xmath450 where @xmath451 .
+2 .   for @xmath447
+the condition does hold true for @xmath452 where @xmath68 .
+this indicates that that the threshold for invertibility of @xmath43 in the hilbert space setting for @xmath14 is at least @xmath453 .
+now we examine the general case .
+the graphs shown in figures  [ th10ab ] and [ th10c ] correspond to regions in the @xmath44-plane near @xmath454 .
+curves on figure  [ th10ab ] that are in red are relevant only to the hilbert space setting @xmath57 .
+black curves pertain to @xmath20 .
+figure  [ th10ab]-_(a ) _ and a blowup shown in figure  [ th10ab]-_(b ) _ , have two solid ( black ) lines .
+one that shows the limit of applicability of theorem  [ impro_implicit]-[aimplicit ] and one that shows the limit of applicability of the result of @xcite .
+the dashed line indicates where occurs . to the left of that curve
+is not applicable .
+there are two filled regions of different colours in _ ( a ) _ , which indicate where @xmath455 and where @xmath456 for @xmath208 .
+proposition  [ beyond2 ] is not applicable in the union of these regions .
+we also show the lines where @xmath457 and @xmath458 .
+the latter forms part of the boundary of this union . the solid red line corresponding to the limit of applicability of theorem  [ impro_implicit]-[bimplicit ] is also included in figure  [ th10ab]-_(a)(d)_. to the right of that line , in the white area , we know that @xmath43 is invertible for @xmath57 . the blowup in figure  [ th10ab]-_(b )
+_ clearly shows the gap between theorem  [ impro_implicit]-[aimplicit ] and theorem  [ impro_implicit]-[bimplicit ] in this @xmath57 setting .
+certainly @xmath459 is a point of intersection for all curves where @xmath29 for @xmath123 .
+these curves are shown in figure  [ th10ab]-_(c ) _ also for @xmath460 and @xmath461 . in this figure
+, we also include the boundary of the region where @xmath455 and the region where @xmath456 now for @xmath462 .
+note that the curves for @xmath463 and @xmath458 form part of the boundary of the latter . comparing _ ( a ) _ and _ ( c ) _ , the new line that cuts the @xmath16 axis at @xmath464 corresponds to the limit of where proposition  [ beyond2 ] for @xmath465 is applicable ( for @xmath16 to the right of this line ) .
+the gap between the two red lines ( case @xmath57 ) indicates that proposition  [ beyond2 ] can significantly improve the threshold for basisness with respect to a direct application of theorem  [ impro_implicit]-[bimplicit ] .
+as we increase @xmath466 , the boundary of the corresponding region moves to the left , see the blowups in figure  [ th10ab]-_(d ) _ and _ ( e)_. the two further curves in red located very close to the vertical axis , correspond to the precise value of the parameter @xmath466 where proposition  [ beyond2 ] allows a proof of invertibility for the change of coordinates which includes the break made by . for @xmath467
+the region does not include the dashed black line , for @xmath447 it does include this line .
+the region shown in blue indicates a possible place where corollary  [ main_1 ] may still apply , but further investigation in this respect is needed .
+figure  [ th10c ] concerns the statement of theorem  [ impro_implicit]-[cimplicit ] .
+the small wedge shown in green is the only place where the former is applicable .
+as it turns , it appears that the conditions of corollary  [ main_2 ] prevent it to be useful for determining invertibility of @xmath43 in a neighbourhood of @xmath454 .
+however in the region shown in green , the upper bound on the riesz constant consequence of is sharper than that obtained from .
+part of the difficulties for a proof of basisness for the family @xmath21 in the regime @xmath470 has to do the fact that the fourier coefficients of @xmath471 approach those of the function @xmath472 . in this appendix
+we show that , indeed @xmath473    note that @xmath474    let @xmath475 be the ( unique ) value , such that @xmath476 then @xmath477 let @xmath478 be the line passing through the points @xmath479 and @xmath480 .
+there exists a unique value @xmath481 such that @xmath482 this value is unique because of monotonicity of both sides of this equality , and it exists by bisection .
+as all the functions involved are continuous in @xmath16 , then also @xmath483 is continuous in the parameter @xmath16 .
+moreover , @xmath484 indeed , by clearing the equation defining @xmath483 , we get @xmath485 the right hand side , and thus the left hand side , approach 0 as @xmath388 .
+then , one ( and hence both ) of the two terms multiplying on the left should approach 0 .
+let @xmath486 be the polygon which has as vertices ( ordered clockwise ) @xmath487 as @xmath488 @xmath489\times\{0\ } ) \cup ( \{1\}\times [ 0,1])$ ] in hausdorff distance .
+then the area of @xmath486 approaches 0 as @xmath388 .
+moreover , @xmath486 covers the graph of @xmath490 for @xmath491 .
+thus @xmath492 hence , there is a point @xmath493 on the graph of @xmath494 such that @xmath495 and @xmath496 the proof of is completed from the fact that , as @xmath494 is concave ( because its inverse function is convex ) , the piecewise linear interpolant of @xmath494 for the family of nodes @xmath497 has a graph below that of @xmath494 .
+the following computer codes written in the open source languages octave and python can be used to verify any of the numerical estimations presented in this paper .
+function for computing @xmath207 with 10-digits precision .
+.... # -- function file : [ a , err , np]=apq(k , p , q )    # a is the kth fourier coefficient of the p , q sine function # err is the residual # np number of quadrature points # function [ a , err , np]=apq(k , p , q ) if mod(k,2)==0 ,      disp('error : k should be odd ' ) ;     return ;   end [ i , err , np]=quadcc(@(y ) cos(k*pi*betainc(y.^q,1/q,(p-1)/p)/2),0,1,1e-10 ) ; a = i*2*sqrt(2)/k / pi ; ....
+function for computing @xmath498 with 10-digits precision .
+.... # -- function file : [ s , err , np]=apqsum(k , p , q )    # s is the sum of the fourier coefficient of the p , q sine function # err is the residual # np number of quadrature points # function [ s , err , np]=apqsum(p , q ) [ i , err , np]=quadcc(@(y ) log(cot(pi*betainc(y.^q,1/q,(p-1)/p)/4)),0,1,1e-10 ) ; s = i*sqrt(2)/pi ; ....
+function for computing @xmath207 with variable precision .
+.... def a(k , p , q ) :      " " " computes the kth fourier coefficient of the p , q sine function .
+returns coefficient and residual .
+> > > from sympy.mpmath import *          > > > mp.dps = 25 ; mp.pretty = true          > > > a(1,mpf(12)/11,mpf(12)/11 )          > > > ( 0.8877665848468607372062737 , 1.0e-59 )      " " "      if isint(fraction(k,2 ) ) :          apq=0 ;         e=0 ;         return apq , e      f= lambda x : cos(k*pi*betainc(1/q,(p-1)/p,0,x**q , regularized = true)/2 ) ;      ( i , e)=quad(f,[0,1],error = true , maxdegree=10 ) ;      apq = i*2*sqrt(2)/k / pi ;      return apq , e ....
+function for computing @xmath498 with variable precision .
+.... def suma(p , q ) :      " " " computes the sum of the fourier coefficient of the p , q sine function .       returns sum and residual .
+> > > from sympy.mpmath import *          > > > mp.dps = 25 ; mp.pretty = true          > > > suma(mpf(12)/11,mpf(12)/11 )          > > > ( 1.48634943002852603038783 , 1.0e-56 )      " " "          f= lambda x : log(cot(pi*betainc(1/q,(p-1)/p,0,x**q , regularized = true)/4 ) ) ;      ( i , e)=quad(f,[0,1],error = true , maxdegree=10 ) ;      sumapq = i*sqrt(2)/pi ;      return sumapq , e ....
+the authors wish to express their gratitude to paul binding who suggested this problem a few years back .
+they are also kindly grateful with stefania marcantognini for her insightful comments during the preparation of this manuscript .
+we acknowledge support by the british engineering and physical sciences research council ( ep / i00761x/1 ) , the research support fund of the edinburgh mathematical society and the instituto venezolano de investigaciones cientficas .
+-plane where theorem  [ impro_implicit]-[aimplicit ] and [ bimplicit ] , as well as proposition  [ beyond2 ] ( with different values of @xmath466 ) apply . in all graphs
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10ab],title="fig:",height=226 ] -plane where theorem  [ impro_implicit]-[aimplicit ] and [ bimplicit ] , as well as proposition  [ beyond2 ] ( with different values of @xmath466 ) apply . in all graphs
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10ab],title="fig:",height=226 ]      -plane where theorem  [ impro_implicit]-[aimplicit ] and [ bimplicit ] , as well as proposition  [ beyond2 ] ( with different values of @xmath466 ) apply . in all graphs
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10ab],title="fig:",height=226 ] -plane where theorem  [ impro_implicit]-[aimplicit ] and [ bimplicit ] , as well as proposition  [ beyond2 ] ( with different values of @xmath466 ) apply . in all graphs
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10ab],title="fig:",height=226 ]      -plane where theorem  [ impro_implicit]-[aimplicit ] and [ bimplicit ] , as well as proposition  [ beyond2 ] ( with different values of @xmath466 ) apply . in all graphs
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10ab],title="fig:",height=226 ] -plane where theorem  [ impro_implicit]-[aimplicit ] and [ bimplicit ] , as well as proposition  [ beyond2 ] ( with different values of @xmath466 ) apply . in all graphs
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10ab],title="fig:",height=226 ]    -plane where theorem  [ impro_implicit]-[cimplicit ] applies .
+even when we know @xmath43 is invertible in this region as a consequence of theorem  [ impro_implicit]-[aimplicit ] , the upper bound on the riesz constant provided by improves upon that provided by ( case @xmath57 ) . in this graph
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10c],title="fig:",height=226 ] -plane where theorem  [ impro_implicit]-[cimplicit ] applies .
+even when we know @xmath43 is invertible in this region as a consequence of theorem  [ impro_implicit]-[aimplicit ] , the upper bound on the riesz constant provided by improves upon that provided by ( case @xmath57 ) . in this graph
+@xmath16 corresponds to the horizontal axis and @xmath260 to the vertical axis and the dotted line shows @xmath14 .
+[ th10c],title="fig:",height=226 ]
