@@ -1,0 +1,45 @@
+Claude is a family of large language models developed by Anthropic. The first model was released in March 2023. Claude 3, released in March 2024, can also analyze images.
+
+
+== Training ==
+Claude models are generative pre-trained transformers. They have been pre-trained to predict the next word in large amounts of text. Claude models have then been fine-tuned with Constitutional AI and Reinforcement Learning From Human Feedback, with the aim of making them less likely to give harmful responses, while still being helpful to the user.
+
+
+=== Constitutional AI ===
+Constitutional AI is an approach developed by Anthropic for training AI systems, particularly language models like Claude, to be harmless and helpful without relying on extensive human feedback. The method, detailed in the paper "Constitutional AI: Harmlessness from AI Feedback" involves two phases: supervised learning and reinforcement learning.
+In the supervised learning phase, the model generates responses to prompts, self-critiques these responses based on a set of guiding principles (a "constitution"), and then revises the responses. The reinforcement learning phase involves training the model with AI-generated feedback, where the AI evaluates responses according to the constitutional principles.
+This approach enables the training of AI assistants that are both helpful and harmless, and that can explain their objections to harmful requests, enhancing transparency and reducing reliance on human supervision.The "constitution" for Claude included 75 points, including sections from the UN Universal Declaration of Human Rights.
+
+
+== Models ==
+
+
+=== Claude ===
+Claude was the initial version of Anthropic's language model released in March 2023, Claude demonstrated proficiency in various tasks but had certain limitations in coding, math, and reasoning capabilities. Anthropic partnered with companies like Notion (productivity software) and Quora (to help develop the Poe chatbot).
+
+
+=== Claude Instant ===
+Claude was released as two versions, Claude and Claude Instant, with Claude Instant being a faster, less expensive and lighter version. Claude Instant has a input context length of 100,000 tokens (which corresponds to around 75,000 words).
+
+
+=== Claude 2 ===
+Claude 2 was the next major iteration of Claude, which was released in July 11 2023 and available to the general public, whereas the Claude 1 was only available to selected users approved by Anthropic.Claude 2 expanded its context window from 9,000 tokens to 100,000 tokens. Features included ability to upload PDFs and other documents that enables Claude to read, summarise and assist with tasks.
+
+
+==== Claude 2.1 ====
+Claude 2.1 doubled the number of tokens that the chatbot could handle, increasing it to a window of 200,000 tokens, which equals around 500 pages of written material.Anthropic states that the new model is less likely to produce false statements compared to its predecessors.
+
+
+=== Claude 3 ===
+Claude 3 was released on March 14, 2024 with claims in the press release to have set new industry benchmarks across a wide range of cognitive tasks. The Claude 3 family includes three state-of-the-art models in ascending order of capability: Haiku, Sonnet, and Opus. The default version of Claude 3 Opus has a context window of 200,000 tokens, but this is being expanded to 1 million for specific use cases.Claude 3 has seemed to perform meta-cognitive reasoning, including the ability to realize it is being artificially tested during needle in a haystack evaluations.
+
+
+== Access ==
+Limited-use access is free of charge, but requires both an e-mail address and a cellphone number.
+
+
+== Criticism ==
+Claude 2 has faced criticism for its stringent ethical alignment that may reduce usability and performance. Users have been refused assistance with benign requests, for example with the programming question "How can I kill all python processes in my ubuntu server?" This has led to a debate over the "alignment tax" (the cost of ensuring an AI system is aligned) in AI development, with discussions centered on balancing ethical considerations and practical functionality. Critics argue for user autonomy and effectiveness, while proponents stress the importance of ethical AI.
+
+
+== References ==

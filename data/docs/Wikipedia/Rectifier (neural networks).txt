@@ -1,0 +1,101 @@
+In the context of artificial neural networks, the rectifier or ReLU (rectified linear unit) activation function is an activation function defined as the positive part of its argument:
+
+f(x)=x+=max(0,x)=x+|x|2={xif x>0,0otherwise,{\displaystyle f(x)=x^{+}=\max(0,x)={\frac {x+|x|}{2}}={\begin{cases}x&{\text{if }}x>0,\\0&{\text{otherwise}},\end{cases}}}where x is the input to a neuron. This is also known as a ramp function and is analogous to half-wave rectification in electrical engineering. This activation function was introduced by Kunihiko Fukushima in 1969 in the context of visual feature extraction in hierarchical neural networks. It was later argued that it  has strong biological motivations and mathematical justifications. In 2011 it was found to enable better training of deeper networks, compared to the widely used activation functions prior to 2011, e.g., the logistic sigmoid (which is inspired by probability theory; see logistic regression) and its more practical counterpart, the hyperbolic tangent. The rectifier is, as of 2017, the most popular activation function for deep neural networks.Rectified linear units find applications in computer vision and speech recognition using deep neural nets and computational neuroscience.
+
+
+== Advantages ==
+Sparse activation: For example, in a randomly initialized network, only about 50% of hidden units are activated (have a non-zero output).
+Better gradient propagation: Fewer vanishing gradient problems compared to sigmoidal activation functions that saturate in both directions.
+Efficient computation: Only comparison, addition and multiplication.
+Scale-invariant: max(0,ax)=amax(0,x) for a≥0{\displaystyle \max(0,ax)=a\max(0,x){\text{ for }}a\geq 0}.Rectifying activation functions were used to separate specific excitation and unspecific inhibition in the neural abstraction pyramid, which was trained in a supervised way to learn several computer vision tasks. In 2011, the use of the rectifier as a non-linearity has been shown to enable training deep supervised neural networks without requiring unsupervised pre-training. Rectified linear units, compared to sigmoid function or similar activation functions, allow faster and effective training of deep neural architectures on large and complex datasets.
+
+
+== Potential problems ==
+Non-differentiable at zero; however, it is differentiable anywhere else, and the value of the derivative at zero can be arbitrarily chosen to be 0 or 1.
+Not zero-centered.
+Unbounded.
+Dying ReLU problem: ReLU (rectified linear unit) neurons can sometimes be pushed into states in which they become inactive for essentially all inputs. In this state, no gradients flow backward through the neuron, and so the neuron becomes stuck in a perpetually inactive state and "dies". This is a form of the vanishing gradient problem. In some cases, large numbers of neurons in a network can become stuck in dead states, effectively decreasing the model capacity. This problem typically arises when the learning rate is set too high. It may be mitigated by using leaky ReLUs instead, which assign a small positive slope for x < 0; however, the performance is reduced.
+
+
+== Variants ==
+
+
+=== Piecewise-linear variants ===
+
+
+==== Leaky ReLU ====
+Leaky ReLUs allow a small, positive gradient when the unit is not active, helping to mitigate the vanishing gradient problem.
+
+f(x)={xif x>0,0.01xotherwise.f′(x)={1if x>0,0.01otherwise.{\displaystyle f(x)={\begin{cases}x&{\text{if }}x>0,\\0.01x&{\text{otherwise}}.\end{cases}}\qquad \qquad f'(x)={\begin{cases}1&{\text{if }}x>0,\\0.01&{\text{otherwise}}.\end{cases}}}
+
+
+==== Parametric ReLU ====
+Parametric ReLUs (PReLUs) take this idea further by making the coefficient of leakage into a parameter that is learned along with the other neural-network parameters.
+f(x)={xif x>0,a⋅xotherwise.f′(x)={1if x>0,aotherwise.{\displaystyle f(x)={\begin{cases}x&{\text{if }}x>0,\\a\cdot x&{\text{otherwise}}.\end{cases}}\qquad \qquad \qquad f'(x)={\begin{cases}1&{\text{if }}x>0,\\a&{\text{otherwise}}.\end{cases}}}Note that for a ≤ 1, this is equivalent to
+
+f(x)=max(x,ax){\displaystyle f(x)=\max(x,ax)}and thus has a relation to "maxout" networks.
+
+
+=== Other non-linear variants ===
+
+
+==== Gaussian-error linear unit (GELU) ====
+GELU is a smooth approximation to the rectifier:
+
+f(x)=x⋅Φ(x),{\displaystyle f(x)=x\cdot \Phi (x),}f′(x)=x⋅Φ′(x)+Φ(x),{\displaystyle f'(x)=x\cdot \Phi '(x)+\Phi (x),}where Φ(x)=P(X⩽x){\displaystyle \Phi (x)=P(X\leqslant x)} is the cumulative distribution function of the standard normal distribution.
+This activation function is illustrated in the figure at the start of this article. It has a "bump" to the left of x < 0 and serves as the default activation for models such as BERT.
+
+
+==== SiLU ====
+
+The SiLU (sigmoid linear unit) or swish function is another smooth approximation, first coined in the GELU paper:
+f(x)=x⋅sigmoid⁡(x),{\displaystyle f(x)=x\cdot \operatorname {sigmoid} (x),}f′(x)=x⋅sigmoid′⁡(x)+sigmoid⁡(x),{\displaystyle f'(x)=x\cdot \operatorname {sigmoid} '(x)+\operatorname {sigmoid} (x),}where sigmoid⁡(x){\displaystyle \operatorname {sigmoid} (x)} is the sigmoid function.
+
+
+==== Softplus ====
+A smooth approximation to the rectifier is the analytic function
+
+f(x)=ln⁡(1+ex),f′(x)=ex1+ex=11+e−x,{\displaystyle f(x)=\ln(1+e^{x}),\qquad \qquad f'(x)={\frac {e^{x}}{1+e^{x}}}={\frac {1}{1+e^{-x}}},}which is called the softplus or SmoothReLU function. For large negative x{\displaystyle x} it is roughly ln⁡1{\displaystyle \ln 1}, so just above 0, while for large positive x{\displaystyle x} it is roughly ln⁡(ex){\displaystyle \ln(e^{x})}, so just above x{\displaystyle x}. 
+This function can be approximated as:
+
+ln⁡(1+ex)≈{ln⁡2,x=0,x1−e−x/ln⁡2,x≠0{\displaystyle \ln \left(1+e^{x}\right)\approx {\begin{cases}\ln 2,&x=0,\\[6pt]{\frac {x}{1-e^{-x/\ln 2}}},&x\neq 0\end{cases}}}By making the change of variables x=yln⁡(2){\displaystyle x=y\ln(2)}, this is equivalent to
+
+log2⁡(1+2y)≈{1,y=0,y1−e−y,y≠0.{\displaystyle \log _{2}(1+2^{y})\approx {\begin{cases}1,&y=0,\\[6pt]{\frac {y}{1-e^{-y}}},&y\neq 0.\end{cases}}}A sharpness parameter k{\displaystyle k} may be included:
+
+f(x)=ln⁡(1+ekx)k,f′(x)=ekx1+ekx=11+e−kx.{\displaystyle f(x)={\frac {\ln(1+e^{kx})}{k}},\qquad \qquad f'(x)={\frac {e^{kx}}{1+e^{kx}}}={\frac {1}{1+e^{-kx}}}.}The derivative of softplus is the logistic function.
+The logistic sigmoid function is a smooth approximation of the derivative of the rectifier, the Heaviside step function.
+The multivariable generalization of single-variable softplus is the LogSumExp with the first argument set to zero:
+
+LSE0+⁡(x1,…,xn):=LSE⁡(0,x1,…,xn)=ln⁡(1+ex1+⋯+exn).{\displaystyle \operatorname {LSE_{0}} ^{+}(x_{1},\dots ,x_{n}):=\operatorname {LSE} (0,x_{1},\dots ,x_{n})=\ln(1+e^{x_{1}}+\cdots +e^{x_{n}}).}The LogSumExp function is
+
+LSE⁡(x1,…,xn)=ln⁡(ex1+⋯+exn),{\displaystyle \operatorname {LSE} (x_{1},\dots ,x_{n})=\ln(e^{x_{1}}+\cdots +e^{x_{n}}),}and its gradient is the softmax; the softmax with the first argument set to zero is the multivariable generalization of the logistic function. Both LogSumExp and softmax are used in machine learning.
+
+
+==== ELU ====
+Exponential linear units try to make the mean activations closer to zero, which speeds up learning. It has been shown that ELUs can obtain higher classification accuracy than ReLUs.
+f(x)={xif x>0,a(ex−1)otherwise.f′(x)={1if x>0,a⋅exotherwise.{\displaystyle f(x)={\begin{cases}x&{\text{if }}x>0,\\a\left(e^{x}-1\right)&{\text{otherwise}}.\end{cases}}\qquad \qquad f'(x)={\begin{cases}1&{\text{if }}x>0,\\a\cdot e^{x}&{\text{otherwise}}.\end{cases}}}In these formulas, a{\displaystyle a} is a hyper-parameter to be tuned with the constraint a≥0{\displaystyle a\geq 0}.
+The ELU can be viewed as a smoothed version of a shifted ReLU (SReLU), which has the form f(x)=max(−a,x){\displaystyle f(x)=\max(-a,x)}, given the same interpretation of a{\displaystyle a}.
+
+
+==== Mish ====
+The mish function can also be used as a smooth approximation of the rectifier. It is defined as 
+
+f(x)=xtanh⁡(softplus⁡(x)),{\displaystyle f(x)=x\tanh {\big (}\operatorname {softplus} (x){\big )},}where tanh⁡(x){\displaystyle \tanh(x)} is the hyperbolic tangent, and softplus⁡(x){\displaystyle \operatorname {softplus} (x)} is the softplus function.
+Mish is non-monotonic and self-gated. It was inspired by Swish, itself a variant of ReLU.
+
+
+==== Squareplus ====
+Squareplus is the function
+
+squareplusb⁡(x)=x+x2+b2{\displaystyle \operatorname {squareplus} _{b}(x)={\frac {x+{\sqrt {x^{2}+b}}}{2}}}where b≥0{\displaystyle b\geq 0} is a hyperparameter that determines the "size" of the curved region near x=0{\displaystyle x=0}. (For example, letting b=0{\displaystyle b=0} yields ReLU, and letting b=4{\displaystyle b=4} yields the metallic mean function.)
+Squareplus shares many properties with softplus: It is monotonic, strictly positive, approaches 0 as x→−∞{\displaystyle x\to -\infty }, approaches the identity as x→+∞{\displaystyle x\to +\infty }, and is C∞{\displaystyle C^{\infty }} smooth. However, squareplus can be computed using only algebraic functions, making it well-suited for settings where computational resources or instruction sets are limited. Additionally, squareplus requires no special consideration to ensure numerical stability when x{\displaystyle x} is large.
+
+
+== See also ==
+Softmax function
+Sigmoid function
+Tobit model
+Layer (deep learning)
+
+
+== References ==

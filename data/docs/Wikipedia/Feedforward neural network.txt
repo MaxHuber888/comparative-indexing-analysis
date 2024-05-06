@@ -1,0 +1,66 @@
+A feedforward neural network (FNN) is one of the two broad types of artificial neural network, characterized by direction of the flow of information between its layers. Its flow is uni-directional, meaning that the information in the model flows in only one direction—forward—from the input nodes, through the hidden nodes (if any) and to the output nodes, without any cycles or loops, in contrast to recurrent neural networks, which have a bi-directional flow. Modern feedforward networks are trained using the backpropagation method and are colloquially referred to as the "vanilla" neural networks.
+
+
+== Timeline ==
+In 1958, a layered network of perceptrons, consisting of an input layer, a hidden layer with randomized weights that did not learn, and an output layer with learning connections, was introduced already by Frank Rosenblatt in his book Perceptron. This extreme learning machine was not yet a deep learning network.In 1965, the first  deep-learning feedforward network, not yet using stochastic gradient descent, was published by Alexey Grigorevich Ivakhnenko and Valentin Lapa, at the time called the Group Method of Data Handling.In 1967, a deep-learning network, using stochastic gradient descent for the first time, was able to classify non-linearily separable pattern classes, as reported Shun'ichi Amari. Amari's student Saito conducted the computer experiments, using a five-layered feedforward network with two learning layers.In 1970, modern backpropagation method, an efficient application of a chain-rule-based supervised learning, was for the first time published by the Finnish researcher Seppo Linnainmaa. The term (i.e. "back-propagating errors") itself has been used by Rosenblatt himself, but he did not know how to implement it, although a continuous precursor of backpropagation was already used in the context of control theory in 1960 by Henry J. Kelley. It is known also as a reverse mode of automatic differentiation.In 1982, backpropagation was applied in the way that has become standard, for the first time by Paul Werbos.In 1985, an experimental analysis of the technique was conducted by David E. Rumelhart et al.. Many improvements to the approach have been made in subsequent decades.In 1987, using a stochastic gradient descent within a (wide 12-layer nonlinear) feed-forward network, Matthew Brand has trained it to reproduce logic functions of nontrivial circuit depth, using small batches of random input/output samples. He, however, concluded that on hardware (sub-megaflop computers) available at the time it was impractical, and proposed using fixed random early layers as an input hash for a single modifiable layer.In 1990s, an (much simpler) alternative to using neural networks, although still related support vector machine approach was developed by Vladimir Vapnik and his colleagues. In addition to performing linear classification, they were able to efficiently perform a non-linear classification using what is called the kernel trick, using high-dimensional feature spaces.In 2003, interest in backpropagation networks returned due to the successes of deep learning being applied to language modelling by Yoshua Bengio with co-authors.In 2017, modern transformer architectures were introduced.
+
+
+== Mathematical foundations ==
+
+
+=== Activation function ===
+The two historically common activation functions are both sigmoids, and are described by
+
+y(vi)=tanh⁡(vi)  and  y(vi)=(1+e−vi)−1{\displaystyle y(v_{i})=\tanh(v_{i})~~{\textrm {and}}~~y(v_{i})=(1+e^{-v_{i}})^{-1}}.The first is a hyperbolic tangent that ranges from -1 to 1, while the other is the logistic function, which is similar in shape but ranges from 0 to 1. Here yi{\displaystyle y_{i}} is the output of the i{\displaystyle i}th node (neuron) and vi{\displaystyle v_{i}} is the weighted sum of the input connections. Alternative activation functions have been proposed, including the rectifier and softplus functions. More specialized activation functions include radial basis functions (used in radial basis networks, another class of supervised neural network models).
+In recent developments of deep learning the rectified linear unit (ReLU) is more frequently used as one of the possible ways to overcome the numerical problems related to the sigmoids.
+
+
+=== Learning ===
+Learning occurs by changing connection weights after each piece of data is processed, based on the amount of error in the output compared to the expected result. This is an example of supervised learning, and is carried out through backpropagation.
+We can represent the degree of error in an output node j{\displaystyle j} in the n{\displaystyle n}th data point (training example) by ej(n)=dj(n)−yj(n){\displaystyle e_{j}(n)=d_{j}(n)-y_{j}(n)}, where dj(n){\displaystyle d_{j}(n)} is the desired target value for n{\displaystyle n}th data point at node j{\displaystyle j}, and yj(n){\displaystyle y_{j}(n)} is the value produced at node j{\displaystyle j} when the n{\displaystyle n}th data point is given as an input.
+The node weights can then be adjusted based on corrections that minimize the error in the entire output for the n{\displaystyle n}th data point, given by
+
+E(n)=12∑output node jej2(n){\displaystyle {\mathcal {E}}(n)={\frac {1}{2}}\sum _{{\text{output node }}j}e_{j}^{2}(n)}.Using gradient descent, the change in each weight wij{\displaystyle w_{ij}} is
+
+Δwji(n)=−η∂E(n)∂vj(n)yi(n){\displaystyle \Delta w_{ji}(n)=-\eta {\frac {\partial {\mathcal {E}}(n)}{\partial v_{j}(n)}}y_{i}(n)}where yi(n){\displaystyle y_{i}(n)} is the output of the previous neuron i{\displaystyle i}, and η{\displaystyle \eta } is the learning rate, which is selected to ensure that the weights quickly converge to a response, without oscillations. In the previous expression, ∂E(n)∂vj(n){\displaystyle {\frac {\partial {\mathcal {E}}(n)}{\partial v_{j}(n)}}} denotes the partial derivate of the error E(n){\displaystyle {\mathcal {E}}(n)} according to the weighted sum vj(n){\displaystyle v_{j}(n)} of the input connections of neuron i{\displaystyle i}.
+The derivative to be calculated depends on the induced local field vj{\displaystyle v_{j}}, which itself varies. It is easy to prove that for an output node this derivative can be simplified to
+
+−∂E(n)∂vj(n)=ej(n)ϕ′(vj(n)){\displaystyle -{\frac {\partial {\mathcal {E}}(n)}{\partial v_{j}(n)}}=e_{j}(n)\phi ^{\prime }(v_{j}(n))}where ϕ′{\displaystyle \phi ^{\prime }} is the derivative of the activation function described above, which itself does not vary. The analysis is more difficult for the change in weights to a hidden node, but it can be shown that the relevant derivative is
+
+−∂E(n)∂vj(n)=ϕ′(vj(n))∑k−∂E(n)∂vk(n)wkj(n){\displaystyle -{\frac {\partial {\mathcal {E}}(n)}{\partial v_{j}(n)}}=\phi ^{\prime }(v_{j}(n))\sum _{k}-{\frac {\partial {\mathcal {E}}(n)}{\partial v_{k}(n)}}w_{kj}(n)}.This depends on the change in weights of the k{\displaystyle k}th nodes, which represent the output layer. So to change the hidden layer weights, the output layer weights change according to the derivative of the activation function, and so this algorithm represents a backpropagation of the activation function.
+
+
+== History ==
+
+
+=== Linear neural network ===
+The simplest kind of feedforward neural network is a linear network, which consists of a single layer of output nodes; the inputs are fed directly to the outputs via a series of weights. The sum of the products of the weights and the inputs is calculated in each node. The mean squared errors between these calculated outputs and a given target values are minimized by creating an adjustment to the weights. This technique has been known for over two centuries as the method of least squares or linear regression. It was used as a means of finding a good rough linear fit to a set of points by Legendre (1805) and Gauss (1795) for the prediction of planetary movement.
+
+
+=== Perceptron ===
+
+If using a threshold, i.e. a linear activation function,  the resulting linear threshold unit is called a perceptron. (Often the term is used to denote just one of these units.) Multiple parallel linear units are able to approximate any continuous function from a compact interval of the real numbers into the interval [−1,1] despite the limited computational power of single unit with a linear threshold function. This result can be found in Peter Auer, Harald Burgsteiner and Wolfgang Maass "A learning rule for very simple universal approximators consisting of a single layer of perceptrons".Perceptrons can be trained by a simple learning algorithm that is usually called the delta rule. It calculates the errors between calculated output and sample output data, and uses this to create an adjustment to the weights, thus implementing a form of gradient descent.
+
+
+=== Multilayer perceptron ===
+A multilayer perceptron (MLP) is a misnomer for a modern feedforward artificial neural network, consisting of fully connected neurons with a nonlinear kind of activation function, organized in at least three layers, notable for being able to distinguish data that is not linearly separable. It is a misnomer because the original perceptron used a Heaviside step function, instead of a nonlinear kind of activation function (used by modern networks).
+
+
+== Other feedforward networks ==
+Examples of other feedforward networks include convolutional neural networks and radial basis function networks, which use a different activation function.
+
+
+== See also ==
+Hopfield network
+Feed-forward
+Backpropagation
+Rprop
+
+
+== References ==
+
+
+== External links ==
+Feedforward neural networks tutorial
+Feedforward Neural Network: Example
+Feedforward Neural Networks: An Introduction

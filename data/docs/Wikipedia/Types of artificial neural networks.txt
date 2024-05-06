@@ -1,0 +1,318 @@
+There are many types of artificial neural networks (ANN).
+Artificial neural networks are computational models inspired by biological neural networks, and are used to approximate functions that are generally unknown. Particularly, they are inspired by the behaviour of neurons and the electrical signals they convey between input (such as from the eyes or nerve endings in the hand), processing, and output from the brain (such as reacting to light, touch, or heat). The way neurons semantically communicate is an area of ongoing research. Most artificial neural networks bear only some resemblance to their more complex biological counterparts, but are very effective at their intended tasks (e.g. classification or segmentation).
+Some artificial neural networks are adaptive systems and are used for example to model populations and environments, which constantly change.
+Neural networks can be hardware- (neurons are represented by physical components) or software-based (computer models), and can use a variety of topologies and learning algorithms.
+
+
+== Feedforward ==
+
+The feedforward neural network was the first and simplest type. In this network the information moves only from the input layer directly through any hidden layers to the output layer without cycles/loops. Feedforward networks can be constructed with various types of units, such as binary McCulloch–Pitts neurons, the simplest of which is the perceptron. Continuous neurons, frequently with sigmoidal activation, are used in the context of backpropagation.
+
+
+=== Group method of data handling ===
+
+The Group Method of Data Handling (GMDH) features fully automatic structural and parametric model optimization. The node activation functions are Kolmogorov–Gabor polynomials that permit additions and multiplications. It uses a deep multilayer perceptron with eight layers. It is a supervised learning network that grows layer by layer, where each layer is trained by regression analysis. Useless items are detected using a validation set, and pruned through regularization. The size and depth of the resulting network depends on the task.
+
+
+=== Autoencoder ===
+
+An autoencoder, autoassociator or Diabolo network: 19  is similar to the multilayer perceptron (MLP) – with an input layer, an output layer and one or more hidden layers connecting them. However, the output layer has the same number of units as the input layer. Its purpose is to reconstruct its own inputs (instead of emitting a target value). Therefore, autoencoders are unsupervised learning models. An autoencoder is used for unsupervised learning of efficient codings, typically for the purpose of dimensionality reduction and for learning generative models of data.
+
+
+=== Probabilistic ===
+
+A probabilistic neural network (PNN) is a four-layer feedforward neural network. The layers are Input, hidden pattern/summation, and output. In the PNN algorithm, the parent probability distribution function (PDF) of each class is approximated by a Parzen window and a non-parametric function. Then, using PDF of each class, the class probability of a new input is estimated and Bayes’ rule is employed to allocate it to the class with the highest posterior probability. It was derived from the Bayesian network and a statistical algorithm called Kernel Fisher discriminant analysis. It is used for classification and pattern recognition.
+
+
+=== Time delay ===
+
+A time delay neural network (TDNN)  is a feedforward architecture for sequential data that recognizes features independent of sequence position. In order to achieve time-shift invariance, delays are added to the input so that multiple data points (points in time) are analyzed together.
+It usually forms part of a larger pattern recognition system. It has been implemented using a perceptron network whose connection weights were trained with back propagation (supervised learning).
+
+
+=== Convolutional ===
+
+A convolutional neural network (CNN, or ConvNet or shift invariant or space invariant) is a class of deep network, composed of one or more convolutional layers with fully connected layers (matching those in typical ANNs) on top. It uses tied weights and pooling layers. In particular, max-pooling. It is often structured via Fukushima's convolutional architecture. They are variations of multilayer perceptrons that use minimal preprocessing. This architecture allows CNNs to take advantage of the 2D structure of input data.
+Its unit connectivity pattern is inspired by the organization of the visual cortex. Units respond to stimuli in a restricted region of space known as the receptive field.  Receptive fields partially overlap, over-covering the entire visual field.  Unit response can be approximated mathematically by a convolution operation.CNNs are suitable for processing visual and other two-dimensional data. They have shown superior results in both image and speech applications. They can be trained with standard backpropagation. CNNs are easier to train than other regular, deep, feed-forward neural networks and have many fewer parameters to estimate.Capsule Neural Networks (CapsNet) add structures called capsules to a CNN and reuse output from several capsules to form more stable (with respect to various perturbations) representations.Examples of applications in computer vision include DeepDream and robot navigation. They have wide applications in image and video recognition, recommender systems and natural language processing.
+
+
+=== Deep stacking network ===
+A deep stacking network (DSN) (deep convex network) is based on a hierarchy of blocks of simplified neural network modules. It was introduced in 2011 by Deng and Yu. It formulates the learning as a convex optimization problem with a closed-form solution, emphasizing the mechanism's similarity to stacked generalization. Each DSN block is a simple module that is easy to train by itself in a supervised fashion without backpropagation for the entire blocks.Each block consists of a simplified multi-layer perceptron (MLP) with a single hidden layer. The hidden layer h has logistic sigmoidal units, and the output layer has linear units. Connections between these layers are represented by weight matrix U; input-to-hidden-layer connections have weight matrix W. Target vectors t form the columns of matrix T, and the input data vectors x form the columns of matrix X. The matrix of hidden units is H=σ(WTX){\displaystyle {\boldsymbol {H}}=\sigma ({\boldsymbol {W}}^{T}{\boldsymbol {X}})}. Modules are trained in order, so lower-layer weights W are known at each stage. The function performs the element-wise logistic sigmoid operation. Each block estimates the same final label class y, and its estimate is concatenated with original input X to form the expanded input for the next block. Thus, the input to the first block contains the original data only, while downstream blocks' input adds the output of preceding blocks. Then learning the upper-layer weight matrix U given other weights in the network can be formulated as a convex optimization problem:
+
+minUTf=‖UTH−T‖F2,{\displaystyle \min _{U^{T}}f=\|{\boldsymbol {U}}^{T}{\boldsymbol {H}}-{\boldsymbol {T}}\|_{F}^{2},}which has a closed-form solution.Unlike other deep architectures, such as DBNs, the goal is not to discover the transformed feature representation. The structure of the hierarchy of this kind of architecture makes parallel learning straightforward, as a batch-mode optimization problem. In purely discriminative tasks, DSNs outperform conventional DBNs.
+
+
+==== Tensor deep stacking networks ====
+This architecture is a DSN extension. It offers two important improvements: it uses higher-order information from covariance statistics, and it transforms the non-convex problem of a lower-layer to a convex sub-problem of an upper-layer. TDSNs use covariance statistics in a bilinear mapping from each of two distinct sets of hidden units in the same layer to predictions, via a third-order tensor.
+While parallelization and scalability are not considered seriously in conventional DNNs, all learning for DSNs and TDSNs is done in batch mode, to allow parallelization. Parallelization allows scaling the design to larger (deeper) architectures and data sets.
+The basic architecture is suitable for diverse tasks such as classification and regression.
+
+
+== Regulatory feedback ==
+Regulatory feedback networks started as a model to explain brain phenomena found during recognition including network-wide bursting and difficulty with similarity found universally in sensory recognition. A mechanism to perform optimization during recognition is created using inhibitory feedback connections back to the same inputs that activate them.  This reduces requirements during learning and allows learning and updating to be easier while still being able to perform complex recognition.
+A regulatory feedback network makes inferences using negative feedback.   The feedback is used to find the optimal activation of units. It is most similar to a non-parametric method but is different from K-nearest neighbor in that it mathematically emulates feedforward networks.
+
+
+== Radial basis function (RBF) ==
+Radial basis functions are functions that have a distance criterion with respect to a center. Radial basis functions have been applied as a replacement for the sigmoidal hidden layer transfer characteristic in multi-layer perceptrons. RBF networks have two layers: In the first, input is mapped onto each RBF in the 'hidden' layer. The RBF chosen is usually a Gaussian. In regression problems the output layer is a linear combination of hidden layer values representing mean predicted output. The interpretation of this output layer value is the same as a regression model in statistics. In classification problems the output layer is typically a sigmoid function of a linear combination of hidden layer values, representing a posterior probability. Performance in both cases is often improved by shrinkage techniques, known as ridge regression in classical statistics. This corresponds to a prior belief in small parameter values (and therefore smooth output functions) in a Bayesian framework.
+RBF networks have the advantage of avoiding local minima in the same way as multi-layer perceptrons. This is because the only parameters that are adjusted in the learning process are the linear mapping from hidden layer to output layer. Linearity ensures that the error surface is quadratic and therefore has a single easily found minimum. In regression problems this can be found in one matrix operation. In classification problems the fixed non-linearity introduced by the sigmoid output function is most efficiently dealt with using iteratively re-weighted least squares.
+RBF networks have the disadvantage of requiring good coverage of the input space by radial basis functions. RBF centres are determined with reference to the distribution of the input data, but without reference to the prediction task. As a result, representational resources may be wasted on areas of the input space that are irrelevant to the task. A common solution is to associate each data point with its own centre, although this can expand the linear system to be solved in the final layer and requires shrinkage techniques to avoid overfitting.
+Associating each input datum with an RBF leads naturally to kernel methods such as support vector machines (SVM) and Gaussian processes (the RBF is the kernel function). All three approaches use a non-linear kernel function to project the input data into a space where the learning problem can be solved using a linear model. Like Gaussian processes, and unlike SVMs, RBF networks are typically trained in a maximum likelihood framework by maximizing the probability (minimizing the error). SVMs avoid overfitting by maximizing instead a margin. SVMs outperform RBF networks in most classification applications. In regression applications they can be competitive when the dimensionality of the input space is relatively small.
+
+
+=== How RBF networks work ===
+RBF neural networks are conceptually similar to K-Nearest Neighbor (k-NN) models. The basic idea is that similar inputs produce similar outputs.
+Assume that each case in a training set has two predictor variables, x and y, and the target variable has two categories, positive and negative. Given a new case with predictor values x=6, y=5.1, how is the target variable computed?
+The nearest neighbor classification performed for this example depends on how many neighboring points are considered. If 1-NN is used and the closest point is negative, then the new point should be classified as negative. Alternatively, if 9-NN classification is used and the closest 9 points are considered, then the effect of the surrounding 8 positive points may outweigh the closest 9-th (negative) point.
+An RBF network positions neurons in the space described by the predictor variables (x,y in this example). This space has as many dimensions as predictor variables. The Euclidean distance is computed from the new point to the center of each neuron, and a radial basis function (RBF, also called a kernel function) is applied to the distance to compute the weight (influence) for each neuron. The radial basis function is so named because the radius distance is the argument to the function.
+
+Weight = RBF(distance)
+
+
+==== Radial Basis Function ====
+The value for the new point is found by summing the output values of the RBF functions multiplied by weights computed for each neuron.
+The radial basis function for a neuron has a center and a radius (also called a spread). The radius may be different for each neuron, and, in RBF networks generated by DTREG, the radius may be different in each dimension.
+With larger spread, neurons at a distance from a point have a greater influence.
+
+
+==== Architecture ====
+RBF networks have three layers:
+
+Input layer: One neuron appears in the input layer for each predictor variable. In the case of categorical variables, N-1 neurons are used where N is the number of categories. The input neurons standardizes the value ranges by subtracting the median and dividing by the interquartile range. The input neurons then feed the values to each of the neurons in the hidden layer.
+Hidden layer: This layer has a variable number of neurons (determined by the training process). Each neuron consists of a radial basis function centered on a point with as many dimensions as predictor variables. The spread (radius) of the RBF function may be different for each dimension. The centers and spreads are determined by training. When presented with the x vector of input values from the input layer, a hidden neuron computes the Euclidean distance of the test case from the neuron's center point and then applies the RBF kernel function to this distance using the spread values. The resulting value is passed to the summation layer.
+Summation layer: The value coming out of a neuron in the hidden layer is multiplied by a weight associated with the neuron and adds to the weighted values of other neurons. This sum becomes the output. For classification problems, one output is produced (with a separate set of weights and summation unit) for each target category. The value output for a category is the probability that the case being evaluated has that category.
+
+
+==== Training ====
+The following parameters are determined by the training process:
+
+The number of neurons in the hidden layer
+The coordinates of the center of each hidden-layer RBF function
+The radius (spread) of each RBF function in each dimension
+The weights applied to the RBF function outputs as they pass to the summation layerVarious methods have been used to train RBF networks. One approach first uses K-means clustering to find cluster centers which are then used as the centers for the RBF functions. However, K-means clustering is computationally intensive and it often does not generate the optimal number of centers. Another approach is to use a random subset of the training points as the centers.
+DTREG uses a training algorithm that uses an evolutionary approach to determine the optimal center points and spreads for each neuron. It determines when to stop adding neurons to the network by monitoring the estimated leave-one-out (LOO) error and terminating when the LOO error begins to increase because of overfitting.
+The computation of the optimal weights between the neurons in the hidden layer and the summation layer is done using ridge regression. An iterative procedure computes the optimal regularization Lambda parameter that minimizes the generalized cross-validation (GCV) error.
+
+
+=== General regression neural network ===
+
+A GRNN is an associative memory neural network that is similar to the probabilistic neural network but it is used for regression and approximation rather than classification.
+
+
+== Deep belief network ==
+
+A deep belief network (DBN) is a probabilistic, generative model made up of multiple hidden layers. It can be considered a composition of simple learning modules.A DBN can be used to generatively pre-train a deep neural network (DNN) by using the learned DBN weights as the initial DNN weights. Various discriminative algorithms can then tune these weights. This is particularly helpful when training data are limited, because poorly initialized weights can significantly hinder learning. These pre-trained weights end up in a region of the weight space that is closer to the optimal weights than random choices. This allows for both improved modeling and faster ultimate convergence.
+
+
+== Recurrent neural network ==
+
+Recurrent neural networks (RNN) propagate data forward, but also backwards, from later processing stages to earlier stages. RNN can be used as general sequence processors.
+
+
+=== Fully recurrent ===
+This architecture was developed in the 1980s. Its network creates a directed connection between every pair of units. Each has a time-varying, real-valued (more than just zero or one) activation (output). Each connection has a modifiable real-valued weight. Some of the nodes are called labeled nodes, some output nodes, the rest hidden nodes.
+For supervised learning in discrete time settings, training sequences of real-valued input vectors become sequences of activations of the input nodes, one input vector at a time. At each time step, each non-input unit computes its current activation as a nonlinear function of the weighted sum of the activations of all units from which it receives connections. The system can explicitly activate (independent of incoming signals) some output units at certain time steps. For example, if the input sequence is a speech signal corresponding to a spoken digit, the final target output at the end of the sequence may be a label classifying the digit. For each sequence, its error is the sum of the deviations of all activations computed by the network from the corresponding target signals. For a training set of numerous sequences, the total error is the sum of the errors of all individual sequences.
+To minimize total error, gradient descent can be used to change each weight in proportion to its derivative with respect to the error, provided the non-linear activation functions are differentiable. The standard method is called "backpropagation through time" or BPTT, a generalization of back-propagation for feedforward networks. A more computationally expensive online variant is called "Real-Time Recurrent Learning" or RTRL. Unlike BPTT this algorithm is local in time but not local in space. An online hybrid between BPTT and RTRL with intermediate complexity exists, with variants for continuous time. A major problem with gradient descent for standard RNN architectures is that error gradients vanish exponentially quickly with the size of the time lag between important events. The Long short-term memory architecture overcomes these problems.In reinforcement learning settings, no teacher provides target signals. Instead a fitness function or reward function or utility function is occasionally used to evaluate performance, which influences its input stream through output units connected to actuators that affect the environment. Variants of evolutionary computation are often used to optimize the weight matrix.
+
+
+==== Hopfield ====
+
+The Hopfield network (like similar attractor-based networks) is of historic interest although it is not a general RNN, as it is not designed to process sequences of patterns. Instead it requires stationary inputs. It is an RNN in which all connections are symmetric. It guarantees that it will converge. If the connections are trained using Hebbian learning the Hopfield network can perform as robust content-addressable memory, resistant to connection alteration.
+
+
+==== Boltzmann machine ====
+
+The Boltzmann machine can be thought of as a noisy Hopfield network. It is one of the first neural networks to demonstrate learning of latent variables (hidden units). Boltzmann machine learning was at first slow to simulate, but the contrastive divergence algorithm speeds up training for Boltzmann machines and Products of Experts.
+
+
+==== Self-organizing map ====
+
+The self-organizing map (SOM) uses unsupervised learning. A set of neurons learn to map points in an input space to coordinates in an output space. The input space can have different dimensions and topology from the output space, and SOM attempts to preserve these.
+
+
+==== Learning vector quantization ====
+
+Learning vector quantization (LVQ) can be interpreted as a neural network architecture. Prototypical representatives of the classes parameterize, together with an appropriate distance measure, in a distance-based classification scheme.
+
+
+=== Simple recurrent ===
+Simple recurrent networks have three layers, with the addition of a set of "context units" in the input layer. These units connect from the hidden layer or the output layer with a fixed weight of one. At each time step, the input is propagated in a standard feedforward fashion, and then a backpropagation-like learning rule is applied (not performing gradient descent). The fixed back connections leave a copy of the previous values of the hidden units in the context units (since they propagate over the connections before the learning rule is applied).
+
+
+=== Reservoir computing ===
+
+Reservoir computing is a computation framework that may be viewed as an extension of neural networks. Typically an input signal is fed into a fixed (random) dynamical system called a reservoir whose dynamics map the input to a higher dimension. A readout mechanism is trained to map the reservoir to the desired output. Training is performed only at the readout stage. Liquid-state machines are a type of reservoir computing.
+
+
+==== Echo state ====
+
+The echo state network (ESN) employs a sparsely connected random hidden layer. The weights of output neurons are the only part of the network that are trained. ESN are good at reproducing certain time series.
+
+
+=== Long short-term memory ===
+
+The long short-term memory (LSTM) avoids the vanishing gradient problem. It works even when with long delays between inputs and can handle signals that mix low and high frequency components. LSTM RNN outperformed other RNN and other sequence learning methods such as HMM in applications such as language learning and connected handwriting recognition.
+
+
+=== Bi-directional ===
+
+Bi-directional RNN, or BRNN, use a finite sequence to predict or label each element of a sequence based on both the past and future context of the element. This is done by adding the outputs of two RNNs: one processing the sequence from left to right, the other one from right to left. The combined outputs are the predictions of the teacher-given target signals. This technique proved to be especially useful when combined with LSTM.
+
+
+=== Hierarchical ===
+
+Hierarchical RNN connects elements in various ways to decompose hierarchical behavior into useful subprograms.
+
+
+=== Stochastic ===
+
+A district from conventional neural networks, stochastic artificial neural network used as an approximation to 
+random functions.
+
+
+=== Genetic Scale ===
+A RNN (often a LSTM) where a series is decomposed into a number of scales where every scale informs the primary length between two consecutive points. A first order scale consists of a normal RNN, a second order consists of all points separated by two indices and so on. The Nth order RNN connects the first and last node. The outputs from all the various scales are treated as a Committee of Machines and the associated scores are used genetically for the next iteration.
+
+
+== Modular ==
+
+Biological studies have shown that the human brain operates as a collection of small networks. This realization gave birth to the concept of modular neural networks, in which several small networks cooperate or compete to solve problems.
+
+
+=== Committee of machines ===
+
+A committee of machines (CoM) is a collection of different neural networks that together "vote" on a given example. This generally gives a much better result than individual networks. Because neural networks suffer from local minima, starting with the same architecture and training but using randomly different initial weights often gives vastly different results. A CoM tends to stabilize the result.
+The CoM is similar to the general machine learning bagging method, except that the necessary variety of machines in the committee is obtained by training from different starting weights rather than training on different randomly selected subsets of the training data.
+
+
+=== Associative ===
+The associative neural network (ASNN) is an extension of committee of machines that combines multiple feedforward neural networks and the k-nearest neighbor technique. It uses the correlation between ensemble responses as a measure of distance amid the analyzed cases for the kNN. This corrects the Bias of the neural network ensemble. An associative neural network has a memory that can coincide with the training set. If new data become available, the network instantly improves its predictive ability and provides data approximation (self-learns) without retraining. Another important feature of ASNN is the possibility to interpret neural network results by analysis of correlations between data cases in the space of models.
+
+
+== Physical ==
+
+A physical neural network includes electrically adjustable resistance material to simulate artificial synapses. Examples include the ADALINE memristor-based neural network. An optical neural network is a physical implementation of an artificial neural network with optical components.
+
+
+== Dynamic ==
+Dynamic neural networks address nonlinear multivariate behaviour and include (learning of) time-dependent behaviour, such as transient phenomena and delay effects. Techniques to estimate a system process from observed data fall under the general category of system identification.
+
+
+=== Cascading ===
+Cascade correlation is an architecture and supervised learning algorithm. Instead of just adjusting the weights in a network of fixed topology, Cascade-Correlation begins with a minimal network, then automatically trains and adds new hidden units one by one, creating a multi-layer structure. Once a new hidden unit has been added to the network, its input-side weights are frozen. This unit then becomes a permanent feature-detector in the network, available for producing outputs or for creating other, more complex feature detectors. The Cascade-Correlation architecture has several advantages: It learns quickly, determines its own size and topology, retains the structures it has built even if the training set changes and requires no backpropagation.
+
+
+=== Neuro-fuzzy ===
+
+A neuro-fuzzy network is a fuzzy inference system in the body of an artificial neural network. Depending on the FIS type, several layers simulate the processes involved in a fuzzy inference-like fuzzification, inference, aggregation and defuzzification. Embedding an FIS in a general structure of an ANN has the benefit of using available ANN training methods to find the parameters of a fuzzy system.
+
+
+=== Compositional pattern-producing ===
+
+Compositional pattern-producing networks (CPPNs) are a variation of artificial neural networks which differ in their set of activation functions and how they are applied. While typical artificial neural networks often contain only sigmoid functions (and sometimes Gaussian functions), CPPNs can include both types of functions and many others. Furthermore, unlike typical artificial neural networks, CPPNs are applied across the entire space of possible inputs so that they can represent a complete image. Since they are compositions of functions, CPPNs in effect encode images at infinite resolution and can be sampled for a particular display at whatever resolution is optimal.
+
+
+== Memory networks ==
+Memory networks incorporate long-term memory. The long-term memory can be read and written to, with the goal of using it for prediction. These models have been applied in the context of question answering (QA) where the long-term memory effectively acts as a (dynamic) knowledge base and the output is a textual response.In sparse distributed memory or hierarchical temporal memory, the patterns encoded by neural networks are used as addresses for content-addressable memory, with "neurons" essentially serving as address encoders and decoders. However, the early controllers of such memories were not differentiable.
+
+
+=== One-shot associative memory ===
+This type of network can add new patterns without re-training. It is done by creating a specific memory structure, which assigns each new pattern to an orthogonal plane using adjacently connected hierarchical arrays. The network offers real-time pattern recognition and high scalability; this requires parallel processing and is thus best suited for platforms such as wireless sensor networks, grid computing, and GPGPUs.
+
+
+=== Hierarchical temporal memory ===
+
+Hierarchical temporal memory (HTM) models some of the structural and algorithmic properties of the neocortex. HTM is a biomimetic model based on memory-prediction theory. HTM is a method for discovering and inferring the high-level causes of observed input patterns and sequences, thus building an increasingly complex model of the world.
+HTM combines existing ideas to mimic the neocortex with a simple design that provides many capabilities. HTM combines and extends approaches used in Bayesian networks, spatial and temporal clustering algorithms, while using a tree-shaped hierarchy of nodes that is common in neural networks.
+
+
+=== Holographic associative memory ===
+
+Holographic Associative Memory (HAM) is an analog, correlation-based, associative, stimulus-response system. Information is mapped onto the phase orientation of complex numbers. The memory is effective for associative memory tasks, generalization and pattern recognition with changeable attention. Dynamic search localization is central to biological memory. In visual perception, humans focus on specific objects in a pattern. Humans can change focus from object to object without learning. HAM can mimic this ability by creating explicit representations for focus. It uses a bi-modal representation of pattern and a hologram-like complex spherical weight state-space. HAMs are useful for optical realization because the underlying hyper-spherical computations can be implemented with optical computation.
+
+
+=== LSTM-related differentiable memory structures ===
+Apart from long short-term memory (LSTM), other approaches also added differentiable memory to recurrent functions. For example:
+
+Differentiable push and pop actions for alternative memory networks called neural stack machines
+Memory networks where the control network's external differentiable storage is in the fast weights of another network
+LSTM forget gates
+Self-referential RNNs with special output units for addressing and rapidly manipulating the RNN's own weights in differentiable fashion (internal storage)
+Learning to transduce with unbounded memory
+
+
+=== Neural Turing machines ===
+
+Neural Turing machines (NTM) couple LSTM networks to external memory resources, with which they can interact by attentional processes. The combined system is analogous to a Turing machine but is differentiable end-to-end, allowing it to be efficiently trained by gradient descent. Preliminary results demonstrate that neural Turing machines can infer simple algorithms such as copying, sorting and associative recall from input and output examples.
+Differentiable neural computers (DNC) are an NTM extension. They out-performed Neural turing machines, long short-term memory systems and memory networks on sequence-processing tasks.
+
+
+=== Semantic hashing ===
+Approaches that represent previous experiences directly and use a similar experience to form a local model are often called nearest neighbour or k-nearest neighbors methods. Deep learning is useful in semantic hashing where a deep graphical model the word-count vectors obtained from a large set of documents. Documents are mapped to memory addresses in such a way that semantically similar documents are located at nearby addresses. Documents similar to a query document can then be found by accessing all the addresses that differ by only a few bits from the address of the query document. Unlike sparse distributed memory that operates on 1000-bit addresses, semantic hashing works on 32 or 64-bit addresses found in a conventional computer architecture.
+
+
+=== Pointer networks ===
+Deep neural networks can be potentially improved by deepening and parameter reduction, while maintaining trainability. While training extremely deep (e.g., 1 million layers) neural networks might not be practical, CPU-like architectures such as pointer networks and neural random-access machines overcome this limitation by using external random-access memory and other components that typically belong to a computer architecture such as registers, ALU and pointers. Such systems operate on probability distribution vectors stored in memory cells and registers. Thus, the model is fully differentiable and trains end-to-end. The key characteristic of these models is that their depth, the size of their short-term memory, and the number of parameters can be altered independently.
+
+
+== Hybrids ==
+
+
+=== Encoder–decoder networks ===
+Encoder–decoder frameworks are based on neural networks that map highly structured input to highly structured output. The approach arose in the context of machine translation, where the input and output are written sentences in two natural languages. In that work, an LSTM RNN or CNN was used as an encoder to summarize a source sentence, and the summary was decoded using a conditional RNN language model to produce the translation. These systems share building blocks: gated RNNs and CNNs and trained attention mechanisms.
+
+
+== Other types ==
+
+
+=== Instantaneously trained ===
+Instantaneously trained neural networks (ITNN) were inspired by the phenomenon of short-term learning that seems to occur instantaneously. In these networks the weights of the hidden and the output layers are mapped directly from the training vector data. Ordinarily, they work on binary data, but versions for continuous data that require small additional processing exist.
+
+
+=== Spiking ===
+Spiking neural networks (SNN) explicitly consider the timing of inputs. The network input and output are usually represented as a series of spikes (delta function or more complex shapes). SNN can process information in the time domain (signals that vary over time). They are often implemented as recurrent networks. SNN are also a form of pulse computer.Spiking neural networks with axonal conduction delays exhibit polychronization, and hence could have a very large memory capacity.SNN and the temporal correlations of neural assemblies in such networks—have been used to model figure/ground separation and region linking in the visual system.
+
+
+=== Spatial ===
+
+Spatial neural networks (SNNs) constitute a supercategory of tailored neural networks (NNs) for representing and predicting geographic phenomena. They generally improve both the statistical accuracy and reliability of the a-spatial/classic NNs whenever they handle  geo-spatial datasets, and also of the other spatial (statistical) models (e.g. spatial regression models) whenever the geo-spatial datasets' variables depict non-linear relations. Examples of SNNs are the OSFA spatial neural networks, SVANNs and GWNNs.
+
+
+=== Neocognitron ===
+The neocognitron is a hierarchical, multilayered network that was modeled after the visual cortex. It uses multiple types of units, (originally two, called simple and complex cells), as a cascading model for use in pattern recognition tasks. Local features are extracted by S-cells whose deformation is tolerated by C-cells. Local features in the input are integrated gradually and classified at higher layers. Among the various kinds of neocognitron are systems that can detect multiple patterns in the same input by using back propagation to achieve selective attention. It has been used for pattern recognition tasks and inspired convolutional neural networks.
+
+
+=== Compound hierarchical-deep models ===
+Compound hierarchical-deep models compose deep networks with non-parametric Bayesian models. Features can be learned using deep architectures such as DBNs, deep Boltzmann machines (DBM), deep auto encoders, convolutional variants, ssRBMs, deep coding networks, DBNs with sparse feature learning, RNNs, conditional DBNs, denoising autoencoders. This provides a better representation, allowing faster learning and more accurate classification with high-dimensional data. However, these architectures are poor at learning novel classes with few examples, because all network units are involved in representing the input (a distributed representation) and must be adjusted together (high degree of freedom). Limiting the degree of freedom reduces the number of parameters to learn, facilitating learning of new classes from few examples. Hierarchical Bayesian (HB) models allow learning from few examples, for example for computer vision, statistics and cognitive science.
+Compound HD architectures aim to integrate characteristics of both HB and deep networks. The compound HDP-DBM architecture is a hierarchical Dirichlet process (HDP) as a hierarchical model, incorporating DBM architecture. It is a full generative model, generalized from abstract concepts flowing through the model layers, which is able to synthesize new examples in novel classes that look "reasonably" natural. All the levels are learned jointly by maximizing a joint log-probability score.In a DBM with three hidden layers, the probability of a visible input ''ν'' is:
+
+p(ν,ψ)=1Z∑hexp⁡(∑ijWij(1)νihj1+∑jℓWjℓ(2)hj1hℓ2+∑ℓmWℓm(3)hℓ2hm3),{\displaystyle p({\boldsymbol {\nu }},\psi )={\frac {1}{Z}}\sum _{h}\exp \left(\sum _{ij}W_{ij}^{(1)}\nu _{i}h_{j}^{1}+\sum _{j\ell }W_{j\ell }^{(2)}h_{j}^{1}h_{\ell }^{2}+\sum _{\ell m}W_{\ell m}^{(3)}h_{\ell }^{2}h_{m}^{3}\right),}where h={h(1),h(2),h(3)}{\displaystyle {\boldsymbol {h}}=\{{\boldsymbol {h}}^{(1)},{\boldsymbol {h}}^{(2)},{\boldsymbol {h}}^{(3)}\}} is the set of hidden units, and ψ={W(1),W(2),W(3)}{\displaystyle \psi =\{{\boldsymbol {W}}^{(1)},{\boldsymbol {W}}^{(2)},{\boldsymbol {W}}^{(3)}\}} are the model parameters, representing visible-hidden and hidden-hidden symmetric interaction terms.
+A learned DBM model is an undirected model that defines the joint distribution P(ν,h1,h2,h3){\displaystyle P(\nu ,h^{1},h^{2},h^{3})}. One way to express what has been learned is the conditional model P(ν,h1,h2∣h3){\displaystyle P(\nu ,h^{1},h^{2}\mid h^{3})} and a prior term P(h3){\displaystyle P(h^{3})}.
+Here P(ν,h1,h2∣h3){\displaystyle P(\nu ,h^{1},h^{2}\mid h^{3})} represents a conditional DBM model, which can be viewed as a two-layer DBM but with bias terms given by the states of h3{\displaystyle h^{3}}:
+
+P(ν,h1,h2∣h3)=1Z(ψ,h3)exp⁡(∑ijWij(1)νihj1+∑jℓWjℓ(2)hj1hℓ2+∑ℓmWℓm(3)hℓ2hm3).{\displaystyle P(\nu ,h^{1},h^{2}\mid h^{3})={\frac {1}{Z(\psi ,h^{3})}}\exp \left(\sum _{ij}W_{ij}^{(1)}\nu _{i}h_{j}^{1}+\sum _{j\ell }W_{j\ell }^{(2)}h_{j}^{1}h_{\ell }^{2}+\sum _{\ell m}W_{\ell m}^{(3)}h_{\ell }^{2}h_{m}^{3}\right).}
+
+
+=== Deep predictive coding networks ===
+A deep predictive coding network (DPCN) is a predictive coding scheme that uses top-down information to empirically adjust the priors needed for a bottom-up inference procedure by means of a deep, locally connected, generative model. This works by extracting sparse features from time-varying observations using a linear dynamical model. Then, a pooling strategy is used to learn invariant feature representations. These units compose to form a deep architecture and are trained by greedy layer-wise unsupervised learning. The layers constitute a kind of Markov chain such that the states at any layer depend only on the preceding and succeeding layers.
+DPCNs predict the representation of the layer, by using a top-down approach using the information in upper layer and temporal dependencies from previous states.DPCNs can be extended to form a convolutional network.
+
+
+=== Multilayer kernel machine ===
+Multilayer kernel machines (MKM) are a way of learning highly nonlinear functions by iterative application of weakly nonlinear kernels. They use kernel principal component analysis (KPCA), as a method for the unsupervised greedy layer-wise pre-training step of deep learning.Layer ℓ+1{\displaystyle \ell +1} learns the representation of the previous layer ℓ{\displaystyle \ell }, extracting the nl{\displaystyle n_{l}} principal component (PC) of the projection layer l{\displaystyle l} output in the feature domain induced by the kernel. To reduce the dimensionaliity of the updated representation in each layer, a supervised strategy selects the best informative features among features extracted by KPCA. The process is:
+
+rank the nℓ{\displaystyle n_{\ell }} features according to their mutual information with the class labels;
+for different values of K and mℓ∈{1,…,nℓ}{\displaystyle m_{\ell }\in \{1,\ldots ,n_{\ell }\}}, compute the classification error rate of a K-nearest neighbor (K-NN) classifier using only the ml{\displaystyle m_{l}} most informative features on a validation set;
+the value of mℓ{\displaystyle m_{\ell }} with which the classifier has reached the lowest error rate determines the number of features to retain.Some drawbacks accompany the KPCA method for MKMs.
+A more straightforward way to use kernel machines for deep learning was developed for spoken language understanding. The main idea is to use a kernel machine to approximate a shallow neural net with an infinite number of hidden units, then use a deep stacking network to splice the output of the kernel machine and the raw input in building the next, higher level of the kernel machine. The number of levels in the deep convex network is a hyper-parameter of the overall system, to be determined by cross validation.
+
+
+== See also ==
+
+
+== References ==
+
+
+== Bibliography ==
+Fukushima, Kunihiko (1987). "A hierarchical neural network model for selective attention". In Eckmiller, R.; Von der Malsburg, C. (eds.). Neural computers. Springer-Verlag. pp. 81–90.
+Fukushima, Kunihiko (2007). "Neocognitron". Scholarpedia. 2 (1): 1717. Bibcode:2007SchpJ...2.1717F. doi:10.4249/scholarpedia.1717.

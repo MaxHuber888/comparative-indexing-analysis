@@ -1,0 +1,98 @@
+A residual neural network (also referred to as a residual network or ResNet) is a deep learning model in which the weight layers learn residual functions with reference to the layer inputs. It behaves like a highway network whose gates are opened through strongly positive bias weights. This enables deep learning models with tens or hundreds of layers to train easily and approach better accuracy when going deeper. The identity skip connections, often referred to as "residual connections", are also used in the 1997 LSTM networks, Transformer models (e.g., BERT, GPT models such as ChatGPT), the AlphaGo Zero system, the AlphaStar system, and the AlphaFold system.
+Residual networks were developed by Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun, who won the 2015 ImageNet competition.
+
+
+== Formulation ==
+
+
+=== Background ===
+The AlexNet model developed in 2012 for ImageNet was an eight-layer convolutional neural network.
+The neural networks developed in 2014 by the Visual Geometry Group (VGG) at the University of Oxford approached a depth of 19 layers by stacking 3-by-3 convolutional layers.
+However, stacking more layers led to a steep reduction in training accuracy, which is referred to as the "degradation" problem.A deeper network should not produce a higher training loss than its shallower counterpart, if this deeper network can be constructed by its shallower counterpart stacked with extra layers. If the extra layers can be set as identity mappings, the deeper network would represent the same function as the shallower counterpart. It is hypothesized that the optimizer is not able to approach identity mappings for the parameterized layers.
+
+
+=== Residual learning ===
+In a multi-layer neural network model, consider a subnetwork with a certain number (e.g., 2 or 3) of stacked layers. Denote the underlying function performed by this subnetwork as H(x){\textstyle H(x)}, where x{\textstyle x} is the input to this subnetwork.
+The idea of "Residual Learning" re-parameterizes this subnetwork and lets the parameter layers represent a residual function F(x):=H(x)−x{\textstyle F(x):=H(x)-x}.
+The output y{\textstyle y} of this subnetwork is represented as:
+
+y=F(x)+x{\displaystyle {\begin{aligned}y&=F(x)+x\end{aligned}}}This is also the principle of the 1997 LSTM cell computing yt+1=F(xt)+xt{\textstyle y_{t+1}=F(x_{t})+x_{t}}, which becomes y=F(x)+x{\textstyle y=F(x)+x} during backpropagation through time.
+The function F(x){\textstyle F(x)} is often represented by matrix multiplication interlaced with activation functions and normalization operations (e.g., Batch Normalization or Layer Normalization).
+This subnetwork is referred to as a "Residual Block". A deep residual network is constructed by stacking a series of residual blocks.
+The operation of "+ x{\textstyle +\ x}" in "y=F(x)+x{\textstyle y=F(x)+x}" is approached by a skip connection that performs identity mapping and connects the input of a residual block with its output. This connection is often referred to as a "Residual Connection" in later work.
+
+
+=== Signal propagation ===
+The introduction of identity mappings facilitates signal propagation in both forward and backward paths.
+
+
+==== Forward propagation ====
+If the output of the ℓ{\textstyle \ell }-th residual block is the input to the (ℓ+1){\textstyle (\ell +1)}-th residual block (i.e., assuming no activation function between blocks), we have:
+xℓ+1=F(xℓ)+xℓ{\displaystyle {\begin{aligned}x_{\ell +1}&=F(x_{\ell })+x_{\ell }\end{aligned}}}Applying this formulation recursively, e.g., xℓ+2=F(xℓ+1)+xℓ+1=F(xℓ+1)+F(xℓ)+xℓ{\displaystyle {\begin{aligned}x_{\ell +2}=F(x_{\ell +1})+x_{\ell +1}=F(x_{\ell +1})+F(x_{\ell })+x_{\ell }\end{aligned}}}, we have:
+
+xL=xℓ+∑i=lL−1F(xi){\displaystyle {\begin{aligned}x_{L}&=x_{\ell }+\sum _{i=l}^{L-1}F(x_{i})\\\end{aligned}}}where L{\textstyle L} is the index of any later residual block (e.g., the last block) and ℓ{\textstyle \ell } is the index of any earlier block. This formulation suggests that there is always a signal that is directly sent from a shallower block ℓ{\textstyle \ell } to a deeper block L{\textstyle L}.
+
+
+==== Backward propagation ====
+The Residual Learning formulation provides the added benefit of addressing the vanishing gradient problem to some extent. However, it is crucial to acknowledge that the vanishing gradient issue is not the root cause of the degradation problem, as it has already been tackled through the use of normalization layers. Taking the derivative w.r.t. xℓ{\textstyle x_{\ell }} according to the above forward propagation, we have:
+∂E∂xℓ=∂E∂xL∂xL∂xℓ=∂E∂xL(1+∂∂xℓ∑i=lL−1F(xi))=∂E∂xL+∂E∂xL∂∂xℓ∑i=lL−1F(xi){\displaystyle {\begin{aligned}{\frac {\partial {\mathcal {E}}}{\partial x_{\ell }}}&={\frac {\partial {\mathcal {E}}}{\partial x_{L}}}{\frac {\partial x_{L}}{\partial x_{\ell }}}\\&={\frac {\partial {\mathcal {E}}}{\partial x_{L}}}\left(1+{\frac {\partial }{\partial x_{\ell }}}\sum _{i=l}^{L-1}F(x_{i})\right)\\&={\frac {\partial {\mathcal {E}}}{\partial x_{L}}}+{\frac {\partial {\mathcal {E}}}{\partial x_{L}}}{\frac {\partial }{\partial x_{\ell }}}\sum _{i=l}^{L-1}F(x_{i})\\\end{aligned}}}Here E{\textstyle {\mathcal {E}}} is the loss function to be minimized.
+This formulation suggests that the gradient computation of a shallower layer 
+∂E∂xℓ{\textstyle {\frac {\partial {\mathcal {E}}}{\partial x_{\ell }}}}
+always has a term ∂E∂xL{\textstyle {\frac {\partial {\mathcal {E}}}{\partial x_{L}}}} that is directly added. Even if the gradients of the F(xi){\textstyle F(x_{i})} terms are small, the total gradient ∂E∂xℓ{\textstyle {\frac {\partial {\mathcal {E}}}{\partial x_{\ell }}}} is not vanishing thanks to the added term ∂E∂xL{\textstyle {\frac {\partial {\mathcal {E}}}{\partial x_{L}}}}.
+
+
+== Variants of residual blocks ==
+
+
+=== Basic block ===
+A Basic Block is the simplest building block studied in the original ResNet. This block consists of two sequential 3x3 convolutional layers and a residual connection. The input and output dimensions of both layers are equal.
+
+
+=== Bottleneck block ===
+A Bottleneck Block consists of three sequential convolutional layers and a residual connection. The first layer in this block is a 1x1 convolution for dimension reduction, e.g., to 1/4 of the input dimension; the second layer performs a 3x3 convolution; the last layer is another 1x1 convolution for dimension restoration. The models of ResNet-50, ResNet-101, and ResNet-152 in  are all based on Bottleneck Blocks.
+
+
+=== Pre-activation block ===
+The Pre-activation Residual Block applies the activation functions (e.g., non-linearity and normalization) before applying the residual function F{\textstyle F}. Formally, the computation of a Pre-activation Residual Block can be written as:
+
+xℓ+1=F(ϕ(xℓ))+xℓ{\displaystyle {\begin{aligned}x_{\ell +1}&=F(\phi (x_{\ell }))+x_{\ell }\end{aligned}}}where ϕ{\textstyle \phi } can be any non-linearity activation (e.g., ReLU) or normalization (e.g., LayerNorm) operation. This design reduces the number of non-identity mappings between Residual Blocks. This design was used to train models with 200 to over 1000 layers.Since GPT-2, the Transformer Blocks have been dominantly implemented as Pre-activation Blocks. This is often referred to as "pre-normalization" in the literature of Transformer models.
+
+
+=== Transformer block ===
+A Transformer Block is a stack of two Residual Blocks. Each Residual Block has a Residual Connection.
+The first Residual Block is a Multi-Head Attention Block, which performs (self-)attention computation followed by a linear projection.
+The second Residual Block is a feed-forward Multi-Layer Perceptron (MLP) Block. This block is analogous to an "inverse" bottleneck block: it has a linear projection layer (which is equivalent to a 1x1 convolution in the context of Convolutional Neural Networks) that increases the dimension, and another linear projection that reduces the dimension.
+A Transformer Block has a depth of 4 layers (linear projections).
+The GPT-3 model has 96 Transformer Blocks (in the literature of Transformers, a Transformer Block is often referred to as a "Transformer Layer"). This model has a depth of about 400 projection layers, including 96x4 layers in Transformer Blocks and a few extra layers for input embedding and output prediction.
+Very deep Transformer models cannot be successfully trained without Residual Connections.
+
+
+== Related Work ==
+In 1961, Frank Rosenblatt described a three-layer multilayer perceptron (MLP) model with skip connections. The model was referred to as a "cross-coupled system", and the skip connections were forms of cross-coupled connections.
+In two books published in 1994
+
+and 1996, "skip-layer" connections were presented in feed-forward MLP models: "The general definition [of MLP] allows more than one hidden layer, and it also allows 'skip-layer' connections from input to output" (p261 in, p144 in ), "... which allows the non-linear units to perturb a linear functional form" (p262 in ). This description suggests that the non-linear MLP performs like a residual function (perturbation) added to a linear function.
+Sepp Hochreiter analyzed the vanishing gradient problem in 1991 and attributed to it the reason why deep learning did not work well.
+To overcome this problem, long short-term memory (LSTM) recurrent neural networks
+had skip connections or residual connections with a weight of 1.0 in every LSTM cell (called the constant error carrousel) to compute yt+1=F(xt)+xt{\textstyle y_{t+1}=F(x_{t})+x_{t}}. During backpropagation through time, this becomes the above-mentioned residual formula y=F(x)+x{\textstyle y=F(x)+x} for feedforward neural networks. This enables training very deep recurrent neural networks with a very long time span t. A later LSTM version published in 2000 modulates the identity LSTM connections by so-called forget gates such that their weights are not fixed to 1.0 but can be learned. In experiments, the forget gates were initialized with positive bias weights, thus being opened, addressing the vanishing gradient problem.
+The highway network of May 2015 
+applies these principles to feedforward neural networks.
+It was reported to be "the first very deep feedforward network with hundreds of layers". 
+It is like an LSTM with forget gates unfolded in time, while the later Residual Nets have no equivalent of forget gates and are like the unfolded original LSTM.
+If the skip connections in Highway Networks are "without gates", or if their gates are kept open (activation 1.0) through strong positive bias weights, they become the identity skip connections in Residual Networks.
+The original Highway Network paper not only introduced the basic principle for very deep feedforward networks, but also included experimental results with 20, 50, and 100 layers networks, and mentioned ongoing experiments with up to 900 layers.
+Networks with 50 or 100 layers had lower training error than their plain network counterparts, but no lower training error than their 20 layers counterpart (on the MNIST dataset, Figure 1 in ). No improvement on test accuracy was reported with networks deeper than 19 layers (on the CIFAR-10 dataset; Table 1 in ). The ResNet paper, however, provided strong experimental evidence of the benefits of going deeper than 20 layers. It argued that the identity mapping without modulation is crucial and mentioned that modulation in the skip connection can still lead to vanishing signals in forward and backward propagation (Section 3 in ). This is also  why the forget gates of the 2000 LSTM were initially opened through positive bias weights: as long as the gates are open, it behaves like the 1997 LSTM. Similarly, a Highway Net whose gates are opened through strongly positive bias weights behaves like a ResNet.
+The skip connections used in modern neural networks (e.g., Transformers) are dominantly identity mappings.
+DenseNets in 2016
+ were designed as deep neural networks that attempt to connect each layer to every other layer. DenseNets approached this goal by using identity mappings as skip connections. Unlike ResNets, DenseNets merge the layer output with skip connections by concatenation, not addition.
+Neural networks with Stochastic Depth
+ were made possible given the Residual Network architectures. This training procedure randomly drops a subset of layers and lets the signal propagate through the identity skip connection. Also known as "DropPath", this is an effective regularization method for training large and deep models, such as the Vision Transformer (ViT).
+
+
+== Biological relation ==
+The original Residual Network paper made no claim on being inspired by biological systems. But research later on has related Residual Networks to biologically-plausible algorithms.
+A study published in Science in 2023
+ disclosed the complete connectome of an insect brain (of a fruit fly larva). This study discovered "multilayer shortcuts" that resemble the skip connections in artificial neural networks, including ResNets.
+
+
+== References ==

@@ -1,0 +1,10 @@
+llama_index==0.10.30
+nltk==3.8.1
+numpy==1.26.4
+openai==1.22.0
+pandas==2.2.2
+python-dotenv==1.0.1
+sentence_transformers==2.6.1
+tiktoken==0.6.0
+torch==1.12.1
+tqdm==4.66.2
